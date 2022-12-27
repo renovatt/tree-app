@@ -8,6 +8,37 @@ import { Stats } from './components/Stats';
 
 
 function App() {
+  const dataBase = localStorage.getItem("transactions")
+  const [transactionsList, setTransactionsList] = React.useState(
+    dataBase ? JSON.parse(dataBase) : []
+  )
+
+  const [earn, setEarn] = React.useState(0)
+  const [spent, setSpent] = React.useState(0)
+  const [wallet, setWallet] = React.useState(0)
+
+  React.useEffect(() => {
+    const amountEarn = transactionsList
+      .filter(item => item.type === 'earn')
+      .map(transactions => Number(transactions.amount))
+    const amountSpent = transactionsList
+      .filter(item => item.type === 'spent')
+      .map(transactions => Number(transactions.amount))
+
+    const earnSum = amountEarn.reduce((acc, cur) => acc + cur, 0).toFixed(2)
+    const spentSum = amountSpent.reduce((acc, cur) => acc + cur, 0).toFixed(2)
+    const total = Math.abs(earnSum - spentSum).toFixed(2)
+
+    setEarn(earnSum)
+    setSpent(spentSum)
+    setWallet(`${Number(earnSum) < Number(spentSum) ? "-" : ''} R$ ${total} `)
+  }, [transactionsList])
+
+  const handleAddition = (transaction) => {
+    const updatedTransactionsList = [...transactionsList, transaction]
+    setTransactionsList(updatedTransactionsList)
+    localStorage.setItem("transactions", JSON.stringify(updatedTransactionsList))
+  }
   return (
     <>
       <GlobalStyled />
@@ -17,8 +48,13 @@ function App() {
           <main className='AppBody'>
             <Routes>
               <Route path='/' element={
-                <Dashboard />
-              } />
+                <Dashboard
+                  earn={earn}
+                  spent={spent}
+                  wallet={wallet}
+                  handleAddition={handleAddition}
+                  transactionsList={transactionsList}
+                />} />
               <Route path='/transactions' element={<Transactions />} />
               <Route path='/stats' element={<Stats />} />
             </Routes>

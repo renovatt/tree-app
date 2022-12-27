@@ -7,7 +7,7 @@ export const PreviewCashCard = ({ value, text, svg }) => {
             <S.Card>
                 {svg}
                 <S.Content>
-                    <S.Value>R$ {value}</S.Value>
+                    <S.Value>{value}</S.Value>
                     <S.Text>{text}</S.Text>
                 </S.Content>
             </S.Card>
