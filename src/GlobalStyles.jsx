@@ -10,6 +10,7 @@ export const GlobalStyled = createGlobalStyle`
 }
 
 :root{
+    --decoration: #f9004d;
     --text-default: #fff;
     --background-white:#fff;
     --background-dark: #101010;

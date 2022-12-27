@@ -9,46 +9,39 @@ export const Container = styled.section`
 
 export const Card = styled.div`
     display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     width: 20rem;
-    height: 8rem;
+    height: 5rem;
     min-width: 8rem;
     min-height: 3rem;
-    border-radius: .4rem;
-
-    svg{
-        width: 2.5rem;
-        height: 2.5rem;
-        color:#fff;
-    }
-
-    @media(max-width: 63.96rem){
-        width: 10rem;
-    }
-
-    @media(max-width: 43.96rem){
-        height: 3rem;
-        margin: .4rem;
-
-        svg{
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
+    border-radius: .8rem;
+    padding: .4rem;
+    background: var(--background-dark);
 `
 
 export const Content = styled.div`
     display: flex;
-    flex-direction: column;
 `
 
 export const Text = styled.p`
     color: #fff;
-    font-size: .8rem;
+    font-size: 1rem;
+    padding: .4rem;
 `
 
 export const Value = styled.span`
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    padding: .4rem;
+
+    @media (max-width: 70rem) {
+        font-size: 1.5rem;
+    }
+
+    svg{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 `

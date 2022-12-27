@@ -44,6 +44,7 @@ export const NavLink = styled(Link)`
 
     &:hover{
         cursor: pointer;
+        color: var(--decoration);
         transform: scale(0.9);
         /* background: var(--background-dark-smooth); */
         }

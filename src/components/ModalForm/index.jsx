@@ -15,6 +15,13 @@ export const ModalForm = ({ handleAddition, setModalForm }) => {
         }).format(currentDateTime)
         return dateFormatter
     }
+    const handleMonth = () => {
+        const currentDateTime = new Date()
+        const dateFormatter = new Intl.DateTimeFormat('pt-br', {
+            month: 'long',
+        }).format(currentDateTime)
+        return dateFormatter
+    }
 
     function handleSaveTransactionsList() {
         if (!resume || !amount || !type) {
@@ -30,7 +37,8 @@ export const ModalForm = ({ handleAddition, setModalForm }) => {
             resume: resume,
             amount: amount,
             type: type,
-            date: handleDate()
+            date: handleDate(),
+            month: handleMonth()
         }
         handleAddition(transaction)
         setResume("")
