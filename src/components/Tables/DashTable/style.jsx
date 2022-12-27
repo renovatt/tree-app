@@ -20,13 +20,20 @@ export const Header = styled.div`
     border-radius: .4rem;
     margin: .4rem;
     padding: 0 3rem;
+
+    @media (max-width: 40rem) {
+        padding: 0 .4rem;
+    }
 `
 
 export const Desc = styled.h3`
-    text-align: center;
     color: #fff;
     font-size: 1.3rem;
     padding: 1rem;
+
+    @media (max-width: 70rem) {
+        font-size: 1rem;
+    }
 `
 
 export const Table = styled.div`

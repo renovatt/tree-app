@@ -44,6 +44,10 @@ body{
     flex-direction: column; */
     right: 0;
     width: 94%;
+
+    @media (max-width: 70rem) {
+        width: 100%;
+    }
 }
 
 li {

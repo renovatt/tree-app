@@ -19,6 +19,10 @@ export const Container = styled.section`
         transform: initial;
         }
     }
+
+    @media (max-width: 70rem) {
+        height: auto;
+    }
 `
 
 export const Header = styled.header`
@@ -54,6 +58,10 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 80%;
     height: 10rem;
+
+    @media (max-width: 60rem) {
+        flex-direction: column;
+    }
 `
 
 export const PreviewCash = styled.div`
@@ -72,6 +80,23 @@ export const PreviewGraph = styled.div`
     height: 10rem;
     border-radius: 50%;
     background: var(--background-dark);
+
+    @media (max-width: 60rem) {
+        display: none;
+    }
+`
+
+export const PreviewGraphBar = styled.div`
+    display: none;
+    width: 30rem;
+    height: 3rem;
+    margin: .4rem;
+    border-radius: .4rem;
+    background: var(--background-dark);
+
+    @media (max-width: 60rem) {
+        display: flex;
+    }
 `
 
 export const Add = styled.button`

@@ -20,6 +20,7 @@ export const Dashboard = ({
           <S.Add onClick={() => setModalForm(true)}>+</S.Add>
         </S.PreviewCash>
         <S.PreviewGraph></S.PreviewGraph>
+        <S.PreviewGraphBar></S.PreviewGraphBar>
       </S.Content>
       <DashTable transactionsList={transactionsList} />
       {modalForm && <ModalForm

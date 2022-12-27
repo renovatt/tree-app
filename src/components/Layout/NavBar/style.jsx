@@ -6,12 +6,13 @@ export const Container = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
     
     height: 100vh;
     width: 5rem;
     background: var(--background-dark);
 
-    @media (max-width: 60rem) {
+    @media (max-width: 70rem) {
         bottom: 0;
         height: 5rem;
         width: 100vw;
@@ -27,7 +28,7 @@ export const NavContainer = styled.nav`
     width: 100%;
     height: 80%;
 
-    @media (max-width: 60rem) {
+    @media (max-width: 70rem) {
         flex-direction: row;
     }
 `
