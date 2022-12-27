@@ -73,6 +73,10 @@ export const PreviewCash = styled.div`
     height: 10rem;
     border-radius: .4rem;
     background: var(--background-dark);
+
+    @media (max-width: 60rem) {
+        width: 100%;
+    }
 `
 
 export const PreviewGraph = styled.div`
@@ -96,6 +100,7 @@ export const PreviewGraphBar = styled.div`
 
     @media (max-width: 60rem) {
         display: flex;
+        width: 100%;
     }
 `
 
