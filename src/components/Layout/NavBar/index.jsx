@@ -11,8 +11,8 @@ export const NavBar = () => {
         <S.Container>
             <S.NavContainer>
                 <S.NavLink to = '/'><BsBank2 /></S.NavLink>
-                <S.NavLink to = '/'><BiTransfer /></S.NavLink>
-                <S.NavLink to = '/'><BiStats /></S.NavLink>
+                <S.NavLink to = '/transactions'><BiTransfer /></S.NavLink>
+                <S.NavLink to = '/stats'><BiStats /></S.NavLink>
                 {/* <S.NavLink to = '/'><TfiStatsUp /></S.NavLink>
                 <S.NavLink to = '/'><TfiStatsDown /></S.NavLink> */}
             </S.NavContainer>

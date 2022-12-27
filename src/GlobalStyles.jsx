@@ -10,12 +10,14 @@ export const GlobalStyled = createGlobalStyle`
 }
 
 :root{
+    --text-default: #fff;
+    --background-white:#fff;
     --background-dark: #101010;
     --background-dark-smooth:#272727;
 }
 
 body{
-    /* background: #27272a; */
+    background: var(--background-dark-smooth);
 }
 
 #1a1138,
@@ -32,8 +34,16 @@ body{
 
 .App{
   display: flex;
-  flex-direction: column;
   min-height: calc(100vh + 10rem);
+}
+
+.AppBody{
+    position: fixed;
+    min-height: 100vh;
+    /* display: flex;
+    flex-direction: column; */
+    right: 0;
+    width: 94%;
 }
 
 li {

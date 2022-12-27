@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export const Container = styled.section`
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +12,6 @@ export const Container = styled.section`
     background: var(--background-dark);
 
     @media (max-width: 60rem) {
-        position: fixed;
         bottom: 0;
         height: 5rem;
         width: 100vw;
@@ -32,7 +32,7 @@ export const NavContainer = styled.nav`
     }
 `
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
