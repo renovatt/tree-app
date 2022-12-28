@@ -80,8 +80,9 @@ export const Content = styled.div`
     }
 `
 export const MonthListContainer = styled.select`
-    height: 3rem;
+    height: 2rem;
     width: 10rem;
+    border: none;
     border-radius: .8rem;
     overflow-y: scroll;
     outline: none;
@@ -98,6 +99,7 @@ export const MonthList = styled.option`
     padding: 1rem; 
     font-weight: bold;
     text-align: center;
+    border-radius: .4rem;
     color: var(--text-default);
 
     &:hover{

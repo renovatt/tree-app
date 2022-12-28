@@ -57,10 +57,11 @@ export const Image = styled.img`
     width: 300px;
     height:300px;
     object-fit: contain;
+    opacity: 0;
+    transition: all .2s;
 `
 
 export const Desc = styled.p`
     color: #fff;
     font-size: 1rem;
-    font-weight: bold;
 `

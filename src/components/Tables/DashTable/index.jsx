@@ -20,7 +20,7 @@ export const DashTable = ({ transactionsList }) => {
                             <TfiStatsUp /> : <TfiStatsDown />} />
                 )) : (
                     <S.ImageContainer>
-                        <S.Image src={error} />
+                        <S.Image onLoad={({ target }) => target.style.opacity = 1} src={error} />
                         <S.Desc>Não existe dados para este mês</S.Desc>
                     </S.ImageContainer>
                 )}
