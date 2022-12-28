@@ -18,10 +18,6 @@ export const Container = styled.section`
         transform: initial;
         }
     }
-
-    @media (max-width: 70rem) {
-       margin-bottom: 8rem;
-    }
 `
 
 export const ImageContainer = styled.div`

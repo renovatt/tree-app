@@ -20,15 +20,15 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
-       margin-bottom: 8rem;
+       margin-bottom: 5rem;
     }
 
     @media (max-width: 60rem) {
-       margin-bottom: 15em;
+       margin-bottom: 8em;
     }
 
     @media (max-width: 50rem) {
-       margin-bottom: 20em;
+       margin-bottom: 15em;
     }
 `
 

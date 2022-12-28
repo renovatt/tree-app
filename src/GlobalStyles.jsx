@@ -17,6 +17,25 @@ export const GlobalStyled = createGlobalStyle`
     --background-dark-smooth:#272727;
 }
 
+
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-track{
+    background-color: #27272a;
+    border-radius: .4rem;
+}
+::-webkit-scrollbar-thumb{
+    background: #101010;
+    border-radius: .4rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
 body{
     background: var(--background-dark-smooth);
 }
@@ -39,6 +58,7 @@ body{
     min-height: 100vh;
     right: 0;
     width: 94%;
+    overflow-x: hidden;
 
     @media (max-width: 80rem) {
         position: initial;

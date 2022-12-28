@@ -16,7 +16,8 @@ export const Container = styled.section`
         bottom: 0;
         left: 0;
         height: 5rem;
-        width: 100vw;
+        width: 100%;
+        border-radius: 3rem 3rem 0 0;
     }
 `
 
@@ -47,7 +48,6 @@ export const NavLink = styled(Link)`
         cursor: pointer;
         color: var(--decoration);
         transform: scale(0.9);
-        /* background: var(--background-dark-smooth); */
         }
 
     svg{
