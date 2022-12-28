@@ -11,6 +11,7 @@ export const ModalForm = ({ handleAddition, setModalForm }) => {
         const currentDateTime = new Date()
         const dateFormatter = new Intl.DateTimeFormat('pt-br', {
             day: 'numeric',
+            weekday: 'long',
             month: 'long',
         }).format(currentDateTime)
         return dateFormatter

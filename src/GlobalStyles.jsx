@@ -21,33 +21,28 @@ body{
     background: var(--background-dark-smooth);
 }
 
-#1a1138,
-#33216d,
-#3a267d,
-#5e3eca,
-
-#27272a,
+#272727,
 #ef4444,
 #22c55e,
 
-
-
-
 .App{
   display: flex;
-  min-height: calc(100vh + 10rem);
+  /* min-height: 100vh; */
+
+  @media (max-width: 70rem) {
+        height: auto;
+    }
 }
 
 .AppBody{
     position: fixed;
     min-height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
     right: 0;
     width: 94%;
 
     @media (max-width: 70rem) {
         width: 100%;
+        height: auto;
     }
 }
 

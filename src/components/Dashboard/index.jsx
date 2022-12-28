@@ -20,6 +20,9 @@ export const Dashboard = ({ wallet, handleAddition, transactionsList }) => {
         <S.PreviewGraph></S.PreviewGraph>
         <S.PreviewGraphBar></S.PreviewGraphBar>
       </S.Content>
+      <S.HeaderDash>
+        <S.Desc>Últimas Transações</S.Desc>
+      </S.HeaderDash>
       <DashTable transactionsList={transactionsList} />
       {modalForm && <ModalForm
         handleAddition={handleAddition} setModalForm={setModalForm} />}

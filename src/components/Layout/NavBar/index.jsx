@@ -3,8 +3,7 @@ import * as S from './style'
 import { BsBank2 } from 'react-icons/bs'
 import { BiTransfer } from 'react-icons/bi'
 import { BiStats } from 'react-icons/bi'
-import { TfiStatsUp } from 'react-icons/tfi'
-import { TfiStatsDown } from 'react-icons/tfi'
+import { CiStickyNote } from 'react-icons/ci'
 
 export const NavBar = () => {
     return (
@@ -13,8 +12,7 @@ export const NavBar = () => {
                 <S.NavLink to = '/'><BsBank2 /></S.NavLink>
                 <S.NavLink to = '/transactions'><BiTransfer /></S.NavLink>
                 <S.NavLink to = '/stats'><BiStats /></S.NavLink>
-                {/* <S.NavLink to = '/'><TfiStatsUp /></S.NavLink>
-                <S.NavLink to = '/'><TfiStatsDown /></S.NavLink> */}
+                <S.NavLink to = '/notes'><CiStickyNote /></S.NavLink>
             </S.NavContainer>
         </S.Container>
     )

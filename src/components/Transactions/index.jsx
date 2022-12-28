@@ -26,17 +26,21 @@ export const Transactions = () => {
     "Novembro",
     "Dezembro"]
 
+  const currentMonth = new Date().toLocaleString('pt-br', {
+    month: 'long',
+  })
+
   const [earn, setEarn] = React.useState(0)
   const [spent, setSpent] = React.useState(0)
   const [wallet, setWallet] = React.useState(0)
-  const [month, setMonth] = React.useState('')
+  const [month, setMonth] = React.useState(currentMonth)
 
   React.useEffect(() => {
     const amountEarn = transactionsList
-      .filter(item => item.type === 'earn' && item.month === month.toLocaleLowerCase())
+      .filter(item => item.type === 'earn' && item.month === month.toLowerCase())
       .map(transactions => Number(transactions.amount))
     const amountSpent = transactionsList
-      .filter(item => item.type === 'spent' && item.month === month.toLocaleLowerCase())
+      .filter(item => item.type === 'spent' && item.month === month.toLowerCase())
       .map(transactions => Number(transactions.amount))
 
     const earnSum = amountEarn.reduce((acc, cur) => acc + cur, 0).toFixed(2)
@@ -50,35 +54,38 @@ export const Transactions = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>Transações</S.Title>
+        <S.Title>Transações Mensal</S.Title>
       </S.Header>
       <S.Content>
         <PreviewCashCard
           value={wallet}
           text={'Faturamento'}
           svg={<BiTransfer color='#f9004d' />} />
+
         <PreviewCashCard
           value={earn}
           text={'Ganhos'}
           svg={<TfiStatsUp color='#22c55e' />} />
+
         <PreviewCashCard
           value={spent}
           text={'Gastos'}
           svg={<TfiStatsDown color='#ef4444' />} />
       </S.Content>
-      <S.ListContainer>
-        {months.map(month => (
-          <S.MonthList
-            key={month}
-            onClick={({ target }) => setMonth(target.outerText)} >
-            {month}
-          </S.MonthList>
-        ))
-        }
-      </S.ListContainer>
+      <S.CalendaryContent>
+        <S.Desc>Transações</S.Desc>
+        <S.MonthListContainer onClick={({ target }) => setMonth(target.value)} >
+          <S.MonthList disabled>Mês</S.MonthList>
+          {months.map(month => (
+            <S.MonthList key={month} >
+              {month}
+            </S.MonthList>
+          ))}
+        </S.MonthListContainer>
+      </S.CalendaryContent>
       <DashTable
         transactionsList={transactionsList
-          .filter(list => list.month === month.toLocaleLowerCase())} />
+          .filter(list => list.month === month.toLowerCase())} />
     </S.Container >
   )
 }

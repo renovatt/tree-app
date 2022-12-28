@@ -20,7 +20,7 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
-        height: auto;
+       
     }
 `
 
@@ -36,6 +36,23 @@ export const Header = styled.header`
 export const Title = styled.h1`
     font-size: 1.5rem;
     color: var(--text-default);
+`
+
+export const Desc = styled.h3`
+    color: var(--text-default);
+    font-size: 1.3rem;
+
+    @media (max-width: 70rem) {
+        font-size: 1rem;
+    }
+`
+
+export const CalendaryContent = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: .4rem;
 `
 
 export const Content = styled.div`
@@ -54,18 +71,28 @@ export const Content = styled.div`
         height: auto;
     }
 `
-export const ListContainer = styled.ul`
-    padding: .4rem;
-    height: 5rem;
+export const MonthListContainer = styled.select`
+    height: 3rem;
+    width: 10rem;
+    border-radius: .8rem;
     overflow-y: scroll;
-`
-
-export const MonthList = styled.li`
-    padding: .4rem; 
-   
+    outline: none;
+    font-weight: bold;
+    color: var(--text-default);
+    background: var(--background-dark);
 
     &:hover{
         cursor: pointer;
-        background: #fff;
+    }
+`
+
+export const MonthList = styled.option`
+    padding: 1rem; 
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-default);
+
+    &:hover{
+        cursor: pointer;
     }
 `

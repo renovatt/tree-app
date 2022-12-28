@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.section`
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
     width: 100%;
     height: 100vh;
@@ -39,6 +38,23 @@ export const Title = styled.h1`
     color: var(--text-default);
 `
 
+export const Desc = styled.h3`
+    color: var(--text-default);
+    font-size: 1.3rem;
+
+    @media (max-width: 70rem) {
+        font-size: 1rem;
+    }
+`
+
+export const HeaderDash = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: .8rem;
+`
+
 export const Logo = styled.h2`
     display: flex;
     align-items: center;
@@ -58,6 +74,7 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 80%;
     height: 10rem;
+    margin: .4rem;
 
     @media (max-width: 60rem) {
         flex-direction: column;

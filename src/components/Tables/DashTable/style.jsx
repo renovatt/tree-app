@@ -5,35 +5,10 @@ export const Container = styled.div`
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    height: 24.9rem;
+    height: 25.2rem;
     width: 88.9%;
     border-radius: .4rem;
     background-color: #272727;
-`
-
-export const Header = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    height: 3rem;
-    width: 100%;
-    border-radius: .4rem;
-    margin: .4rem;
-    padding: 0 3rem;
-
-    @media (max-width: 40rem) {
-        padding: 0 .4rem;
-    }
-`
-
-export const Desc = styled.h3`
-    color: #fff;
-    font-size: 1.3rem;
-    padding: 1rem;
-
-    @media (max-width: 70rem) {
-        font-size: 1rem;
-    }
 `
 
 export const Table = styled.div`

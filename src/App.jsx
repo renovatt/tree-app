@@ -5,6 +5,7 @@ import { NavBar } from "./components/Layout/NavBar";
 import { Dashboard } from './components/Dashboard'
 import { Transactions } from './components/Transactions';
 import { Stats } from './components/Stats';
+import { Notes } from './components/Notes';
 
 
 function App() {
@@ -53,10 +54,10 @@ function App() {
                   spent={spent}
                   wallet={wallet}
                   handleAddition={handleAddition}
-                  transactionsList={transactionsList}
-                />} />
+                  transactionsList={transactionsList} />} />
               <Route path='/transactions' element={<Transactions />} />
               <Route path='/stats' element={<Stats />} />
+              <Route path='/notes' element={<Notes />} />
             </Routes>
           </main>
         </Router>

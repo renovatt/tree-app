@@ -7,10 +7,6 @@ import * as S from './style'
 export const DashTable = ({ transactionsList }) => {
     return (
         <S.Container>
-            <S.Header>
-                <S.Desc>Últimas Transações</S.Desc>
-            </S.Header>
-
             <S.Table>
                 {transactionsList && transactionsList.map((list, index) => (
                     <ItemListTables
