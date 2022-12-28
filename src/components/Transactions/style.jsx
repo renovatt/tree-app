@@ -20,7 +20,11 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
-       
+       margin-bottom: 8rem;
+    }
+
+    @media (max-width: 60rem) {
+       margin-bottom: 20em;
     }
 `
 

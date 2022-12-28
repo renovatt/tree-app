@@ -54,7 +54,7 @@ export const Transactions = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>Transações Mensal</S.Title>
+        <S.Title>Transações Mensais</S.Title>
       </S.Header>
       <S.Content>
         <PreviewCashCard

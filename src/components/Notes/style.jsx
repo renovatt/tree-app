@@ -20,7 +20,11 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
-       
+       margin-bottom: 8rem;
+    }
+
+    @media (max-width: 60rem) {
+       margin-bottom: 32em;
     }
 `
 
@@ -57,6 +61,7 @@ export const PrioritiesList = styled.div`
 
     @media (max-width: 60rem) {
         width: 90%;
+        margin-bottom: 4rem;
     }
 `
 
@@ -132,6 +137,11 @@ export const Add = styled.button`
         cursor: pointer;
         color: var(--background-dark);
         background: var(--background-white);
+    }
+
+    @media (max-width: 70rem) {
+       width: 3rem;
+       font-size: .8rem;
     }
 `
 

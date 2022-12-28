@@ -40,7 +40,8 @@ body{
     right: 0;
     width: 94%;
 
-    @media (max-width: 70rem) {
+    @media (max-width: 80rem) {
+        position: initial;
         width: 100%;
         height: auto;
     }
