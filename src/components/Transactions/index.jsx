@@ -83,6 +83,7 @@ export const Transactions = () => {
           ))}
         </S.MonthListContainer>
       </S.CalendaryContent>
+
       <DashTable
         transactionsList={transactionsList
           .filter(list => list.month === month.toLowerCase())} />

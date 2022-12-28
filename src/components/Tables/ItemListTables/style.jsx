@@ -10,6 +10,17 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 background: #101010;
+
+opacity: 0;
+transform: translateX(20px);
+animation: fade .3s forwards;
+
+@keyframes fade{
+    to{
+    opacity: 1;
+    transform: initial;
+    }
+}
 `
 
 export const ContentLeft = styled.div`

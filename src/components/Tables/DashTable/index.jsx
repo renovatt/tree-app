@@ -2,13 +2,14 @@ import React from 'react'
 import { ItemListTables } from '../ItemListTables'
 import { TfiStatsUp } from 'react-icons/tfi'
 import { TfiStatsDown } from 'react-icons/tfi'
+import error from '../../../assets/error.png'
 import * as S from './style'
 
 export const DashTable = ({ transactionsList }) => {
     return (
         <S.Container>
             <S.Table>
-                {transactionsList && transactionsList.map((list, index) => (
+                {transactionsList.length > 0 ? transactionsList.map((list, index) => (
                     <ItemListTables
                         key={index}
                         resume={list.resume}
@@ -16,10 +17,13 @@ export const DashTable = ({ transactionsList }) => {
                         date={list.date}
                         color={list.type === 'earn' ? "#22c55e" : "#ef4444"}
                         svg={list.type === 'earn' ?
-                            <TfiStatsUp /> : <TfiStatsDown />
-                        }
-                    />
-                ))}
+                            <TfiStatsUp /> : <TfiStatsDown />} />
+                )) : (
+                    <S.ImageContainer>
+                        <S.Image src={error} />
+                        <S.Desc>Não existe dados para este mês</S.Desc>
+                    </S.ImageContainer>
+                )}
             </S.Table>
         </S.Container>
     )

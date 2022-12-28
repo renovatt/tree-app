@@ -24,6 +24,10 @@ export const Container = styled.section`
     }
 
     @media (max-width: 60rem) {
+       margin-bottom: 15em;
+    }
+
+    @media (max-width: 50rem) {
        margin-bottom: 20em;
     }
 `

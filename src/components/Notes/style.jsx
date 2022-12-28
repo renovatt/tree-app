@@ -24,7 +24,7 @@ export const Container = styled.section`
     }
 
     @media (max-width: 60rem) {
-       margin-bottom: 32em;
+       margin-bottom: 35em;
     }
 `
 
@@ -43,7 +43,7 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    height: 30rem;
+    height: 25rem;
 
     @media (max-width: 60rem) {
         width: 100%;
