@@ -46,11 +46,7 @@ body{
 
 .App{
   display: flex;
-  /* min-height: 100vh; */
-
-  @media (max-width: 70rem) {
-        height: auto;
-    }
+  min-height: 100vh;
 }
 
 .AppBody{

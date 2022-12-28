@@ -68,13 +68,13 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    height: 10rem;
+    height: auto;
+    padding-bottom: 2em;
 
     @media (max-width: 80rem) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-gap: 2rem;
-        padding: 2rem;
         width: 100%;
         height: auto;
     }
