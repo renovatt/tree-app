@@ -1,9 +1,9 @@
 import React from 'react'
+import * as S from './style'
 import { PreviewCashCard } from '../PreviewCashCard'
 import { TfiStatsUp } from 'react-icons/tfi'
 import { TfiStatsDown } from 'react-icons/tfi'
 import { BiTransfer } from 'react-icons/bi'
-import * as S from './style'
 import { DashTable } from '../Tables/DashTable'
 
 export const Transactions = () => {

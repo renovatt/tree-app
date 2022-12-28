@@ -19,6 +19,10 @@ export const Card = styled.div`
     border-radius: .8rem;
     padding: .4rem;
     background: var(--background-dark);
+
+    @media (max-width: 60rem) {
+        width: 15rem;
+    }
 `
 
 export const Content = styled.div`

@@ -11,10 +11,6 @@ export const ModalContainer = styled.section`
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, .8);
-
-    @media(max-width: 60rem) {
-        overflow-y: auto;
-    }
 `
 
 export const ModalContent = styled.div`
@@ -26,13 +22,9 @@ export const ModalContent = styled.div`
     border-radius: .4rem;
     
     @media(max-width: 70rem) {
+        width: 100%;
         height: auto;
-        padding: .8rem .4rem;
-    }
-    @media(max-width: 60rem) {
-        flex-direction: column;
-        margin-top: 35rem;
-        margin-bottom: 5rem;
+        margin-top: -5rem;
     }
 `
 
@@ -44,6 +36,7 @@ export const Form = styled.div`
     flex-direction: column;
     height: 25em;
     width: 50%;
+    margin: 0;
     padding: .4rem;
     border-radius: .4rem;
     padding: 0 .8rem;
@@ -72,6 +65,10 @@ export const Form = styled.div`
         opacity: 1;
         transform: initial;
         }
+    }
+
+    @media(max-width: 60rem) {
+        width: 80%;
     }
 `
 

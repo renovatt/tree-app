@@ -24,12 +24,27 @@ export const Container = styled.section`
     }
 `
 
+export const PreviewContent = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
+    margin: 2rem;
+    height: 10rem;
+`
+
 export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 80%;
     height: 30rem;
+
+    @media (max-width: 60rem) {
+        width: 100%;
+        flex-direction: column;
+    }
 `
 
 export const PrioritiesList = styled.div`
@@ -39,6 +54,10 @@ export const PrioritiesList = styled.div`
     flex-direction: column;
     width: 50%;
     height: 25rem;
+
+    @media (max-width: 60rem) {
+        width: 90%;
+    }
 `
 
 export const MonthlyPayments = styled.div`
@@ -48,9 +67,18 @@ export const MonthlyPayments = styled.div`
     flex-direction: column;
     width: 50%;
     height: 25rem;
+
+    @media (max-width: 60rem) {
+        width: 90%;
+    }
 `
 
-export const Title = styled.h3`
+export const Title = styled.h1`
+    font-size: 1.5rem;
+    color: var(--text-default);
+`
+
+export const SubTitle = styled.h3`
     color: var(--text-default);
 `
 
@@ -59,7 +87,7 @@ export const Header = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 3rem;
+    height: 5rem;
     margin: .8rem .4rem;
 `
 
@@ -67,8 +95,26 @@ export const Input = styled.input`
     width: 15rem;
     height: 2rem;
     outline: none;
-    border-radius: .4rem;
-    text-align: center;
+    border: none;
+    text-align: start;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+
+    @media (max-width: 40rem) {
+        width: 10rem;
+    }
+`
+
+export const InputNumber= styled.input`
+    width: 5rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    text-align: start;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid #fff;
 `
 
 export const Add = styled.button`
@@ -127,6 +173,11 @@ export const Lists = styled.span`
     color: var(--text-default);
     background: var(--background-dark);
 `
+
+export const Items = styled.span`
+    min-width: 5rem;
+`
+
 export const Delete = styled.button`
     display: flex;
     align-items: center;

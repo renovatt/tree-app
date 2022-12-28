@@ -1,40 +1,71 @@
 import React from 'react'
 import * as S from './style'
 import { VscTrash } from 'react-icons/vsc'
+import { TfiStatsDown } from 'react-icons/tfi'
+import { PreviewCashCard } from '../PreviewCashCard'
 
 export const Notes = () => {
+  const priorityDataBase = localStorage.getItem("prioritiesList")
+  const paymentsDataBase = localStorage.getItem("paymentsList")
+
+  const [prioritiesList, setPrioritiesList] = React.useState(
+    priorityDataBase ? JSON.parse(priorityDataBase) : [])
+  const [monthlyPaymentsList, setMonthlyPaymentsList] = React.useState(
+    paymentsDataBase ? JSON.parse(paymentsDataBase) : [])
+
   const [priorityItem, setPriorityItem] = React.useState('')
   const [paymentItem, setPaymentItem] = React.useState('')
-  const [prioritiesList, setPrioritiesList] = React.useState([])
-  const [monthlyPaymentsList, setMonthlyPaymentsList] = React.useState([])
-
+  const [paymentAmount, setPaymentAmount] = React.useState('')
+  const [amount, setAmount] = React.useState(0)
   const newPrioritiesList = { name: priorityItem }
-  const newMonthlyPaymentsList = { name: paymentItem }
+  const newMonthlyPaymentsList = { name: paymentItem, amount: paymentAmount }
 
   const handleAddPrioritiesList = () => {
-    setPrioritiesList([...prioritiesList, newPrioritiesList])
+    const updatedPrioritiesList = [...prioritiesList, newPrioritiesList]
+    setPrioritiesList(updatedPrioritiesList)
+    localStorage.setItem("prioritiesList", JSON.stringify(updatedPrioritiesList))
     setPriorityItem('')
   }
 
-  const handleRemovePrioritiesList = (name) => {
-    setPrioritiesList(prioritiesList.filter(i => i.name !== name))
+  const handleAddMonthlyPaymentsList = () => {
+    const updatedPaymentsList = [...monthlyPaymentsList, newMonthlyPaymentsList]
+    setMonthlyPaymentsList(updatedPaymentsList)
+    localStorage.setItem("paymentsList", JSON.stringify(updatedPaymentsList))
+    setPaymentItem('')
+    setPaymentAmount('')
   }
 
-  const handleAddMonthlyPaymentsList = () => {
-    setMonthlyPaymentsList([...monthlyPaymentsList, newMonthlyPaymentsList])
-    setPaymentItem('')
+  const handleRemovePrioritiesList = (name) => {
+    const listUpdated = prioritiesList.filter(i => i.name !== name)
+    localStorage.setItem("prioritiesList", JSON.stringify(listUpdated))
+    setPrioritiesList(listUpdated)
   }
 
   const handleRemoveMonthlyPaymentsList = (name) => {
-    setMonthlyPaymentsList(monthlyPaymentsList.filter(i => i.name !== name));
+    const listUpdated = monthlyPaymentsList.filter(i => i.name !== name)
+    localStorage.setItem("paymentsList", JSON.stringify(listUpdated))
+    setMonthlyPaymentsList(listUpdated)
   }
 
+  React.useEffect(() => {
+    const spentMonthly = monthlyPaymentsList
+      .map(value => Number(value.amount))
+    const spentSum = spentMonthly.reduce((acc, cur) => acc + cur, 0).toFixed(2)
+    setAmount(`R$ ${spentSum}`)
+  }, [monthlyPaymentsList])
 
   return (
     <S.Container>
+      <S.PreviewContent>
+        <S.Title>Anotações</S.Title>
+        <PreviewCashCard
+          svg={<TfiStatsDown color='#ef4444' />}
+          text={'Sua Despesa Mensal'}
+          value={amount} />
+      </S.PreviewContent>
       <S.Content>
         <S.PrioritiesList>
-          <S.Title>Lista de Prioridades</S.Title>
+          <S.SubTitle>Lista de Prioridades</S.SubTitle>
           <S.Header>
             <S.Input
               type='text'
@@ -48,7 +79,7 @@ export const Notes = () => {
           <S.ListContainer>
             {prioritiesList && prioritiesList.map(({ name }) => (
               <S.Lists key={name}>
-                {name}
+                <S.Items>{name}</S.Items>
                 <S.Delete onClick={() => handleRemovePrioritiesList(name)}>
                   <VscTrash />
                 </S.Delete>
@@ -58,21 +89,29 @@ export const Notes = () => {
         </S.PrioritiesList>
 
         <S.MonthlyPayments>
-          <S.Title>Pagamentos Mensais</S.Title>
+          <S.SubTitle>Pagamentos Mensais</S.SubTitle>
           <S.Header>
             <S.Input
               type='text'
               required
               value={paymentItem}
-              placeholder='Digite sua despesa mensal'
+              placeholder='Digite o mone da despesa'
               onChange={({ target }) => setPaymentItem(target.value)} />
+
+            <S.InputNumber
+              type='text'
+              required
+              value={paymentAmount}
+              placeholder='Valor'
+              onChange={({ target }) => setPaymentAmount(target.value)} />
             <S.Add onClick={handleAddMonthlyPaymentsList}>Salvar</S.Add>
           </S.Header>
 
           <S.ListContainer>
-            {monthlyPaymentsList && monthlyPaymentsList.map(({ name }) => (
+            {monthlyPaymentsList && monthlyPaymentsList.map(({ name, amount }) => (
               <S.Lists key={name}>
-                {name}
+                <S.Items>{name}</S.Items>
+                <S.Items>R$ {amount}</S.Items>
                 <S.Delete onClick={() => handleRemoveMonthlyPaymentsList(name)}>
                   <VscTrash />
                 </S.Delete>
