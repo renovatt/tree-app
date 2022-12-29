@@ -20,7 +20,7 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
-       margin-bottom: 5rem;
+       margin-bottom: 15rem;
     }
 `
 
@@ -76,8 +76,9 @@ export const Content = styled.div`
     height: 10rem;
     margin: .4rem;
 
-    @media (max-width: 60rem) {
+    @media (max-width: 65.5rem) {
         flex-direction: column;
+        height: auto;
     }
 `
 
@@ -91,33 +92,35 @@ export const PreviewCash = styled.div`
     border-radius: .4rem;
     background: var(--background-dark);
 
-    @media (max-width: 60rem) {
+    @media (max-width: 65.5rem) {
         width: 100%;
     }
 `
 
-export const PreviewGraph = styled.div`
-    width: 10rem;
+export const PreviewGraphDoughnut  = styled.div`
+    width: 20rem;
     height: 10rem;
-    border-radius: 50%;
+    padding: .4rem;
+    border-radius: .4rem;
     background: var(--background-dark);
 
-    @media (max-width: 60rem) {
+    @media (max-width: 65.5rem) {
         display: none;
     }
 `
 
 export const PreviewGraphBar = styled.div`
     display: none;
-    width: 30rem;
-    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
     margin: .4rem;
     border-radius: .4rem;
     background: var(--background-dark);
 
-    @media (max-width: 60rem) {
+    @media (max-width: 65.5rem) {
         display: flex;
-        width: 100%;
     }
 `
 

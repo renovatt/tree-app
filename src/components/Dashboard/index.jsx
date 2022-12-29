@@ -1,8 +1,10 @@
 import React from 'react'
+import * as S from './style'
 import { ModalForm } from '../ModalForm'
 import { DashCashCard } from '../DashCashCard'
 import { DashTable } from '../Tables/DashTable'
-import * as S from './style'
+import { BarChart } from '../Graphs/BarChart/index.jsx'
+import { DoughnutChart } from '../Graphs/DoughnutChart/index.jsx'
 
 export const Dashboard = ({ wallet, handleAddition, transactionsList }) => {
   const [modalForm, setModalForm] = React.useState(false)
@@ -17,8 +19,15 @@ export const Dashboard = ({ wallet, handleAddition, transactionsList }) => {
           <DashCashCard text={"Seu saldo"} value={wallet} />
           <S.Add onClick={() => setModalForm(true)}>+</S.Add>
         </S.PreviewCash>
-        <S.PreviewGraph></S.PreviewGraph>
-        <S.PreviewGraphBar></S.PreviewGraphBar>
+
+        <S.PreviewGraphDoughnut >
+          <DoughnutChart />
+        </S.PreviewGraphDoughnut>
+
+        <S.PreviewGraphBar>
+          <BarChart />
+        </S.PreviewGraphBar>
+
       </S.Content>
       <S.HeaderDash>
         <S.Desc>Últimas Transações</S.Desc>
