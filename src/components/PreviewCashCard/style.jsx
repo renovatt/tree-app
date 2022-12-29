@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.section`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border-radius: .4rem;
 `
@@ -15,33 +15,43 @@ export const Card = styled.div`
     width: 20rem;
     height: 5rem;
     min-width: 8rem;
-    min-height: 3rem;
     border-radius: .8rem;
     padding: .4rem;
     background: var(--background-dark);
 
+    @media (max-width: 70rem) {
+        width: 10rem;
+        height: 5rem;
+    }
+
     @media (max-width: 60rem) {
-        width: 15rem;
+        height: 5rem;
     }
 `
 
 export const Content = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const Text = styled.p`
     color: #fff;
     font-size: 1rem;
     padding: .4rem;
+
+    @media (max-width: 70rem) {
+        font-size: .8rem;
+    }
 `
 
 export const Value = styled.span`
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: .4rem;
 
     @media (max-width: 70rem) {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     svg{

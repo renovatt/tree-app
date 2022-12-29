@@ -65,6 +65,11 @@ body{
 
 /* test commit  */
 
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
 li {
     list-style: none;
 }

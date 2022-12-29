@@ -61,7 +61,6 @@ export const PrioritiesList = styled.div`
 
     @media (max-width: 60rem) {
         width: 90%;
-        margin-bottom: 4rem;
     }
 `
 
@@ -75,6 +74,7 @@ export const MonthlyPayments = styled.div`
 
     @media (max-width: 60rem) {
         width: 90%;
+        margin-bottom: 4rem;
     }
 `
 

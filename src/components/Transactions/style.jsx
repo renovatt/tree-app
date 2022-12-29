@@ -28,7 +28,7 @@ export const Container = styled.section`
     }
 
     @media (max-width: 50rem) {
-       margin-bottom: 15em;
+       margin-bottom: 10em;
     }
 `
 
@@ -72,10 +72,8 @@ export const Content = styled.div`
     padding-bottom: 2em;
 
     @media (max-width: 80rem) {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 2rem;
-        width: 100%;
+        gap: 1.5rem;
+        flex-wrap: wrap;
         height: auto;
     }
 `

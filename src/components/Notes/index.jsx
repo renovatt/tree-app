@@ -64,30 +64,6 @@ export const Notes = () => {
           value={amount} />
       </S.PreviewContent>
       <S.Content>
-        <S.PrioritiesList>
-          <S.SubTitle>Lista de Prioridades</S.SubTitle>
-          <S.Header>
-            <S.Input
-              type='text'
-              required
-              value={priorityItem}
-              placeholder='Digite seu item'
-              onChange={({ target }) => setPriorityItem(target.value)} />
-            <S.Add onClick={handleAddPrioritiesList}>Salvar</S.Add>
-          </S.Header>
-
-          <S.ListContainer>
-            {prioritiesList && prioritiesList.map(({ name }) => (
-              <S.Lists key={name}>
-                <S.Items>{name}</S.Items>
-                <S.Delete onClick={() => handleRemovePrioritiesList(name)}>
-                  <VscTrash />
-                </S.Delete>
-              </S.Lists>
-            ))}
-          </S.ListContainer>
-        </S.PrioritiesList>
-
         <S.MonthlyPayments>
           <S.SubTitle>Pagamentos Mensais</S.SubTitle>
           <S.Header>
@@ -119,6 +95,30 @@ export const Notes = () => {
             ))}
           </S.ListContainer>
         </S.MonthlyPayments>
+
+        <S.PrioritiesList>
+          <S.SubTitle>Lista de Prioridades</S.SubTitle>
+          <S.Header>
+            <S.Input
+              type='text'
+              required
+              value={priorityItem}
+              placeholder='Digite seu item'
+              onChange={({ target }) => setPriorityItem(target.value)} />
+            <S.Add onClick={handleAddPrioritiesList}>Salvar</S.Add>
+          </S.Header>
+
+          <S.ListContainer>
+            {prioritiesList && prioritiesList.map(({ name }) => (
+              <S.Lists key={name}>
+                <S.Items>{name}</S.Items>
+                <S.Delete onClick={() => handleRemovePrioritiesList(name)}>
+                  <VscTrash />
+                </S.Delete>
+              </S.Lists>
+            ))}
+          </S.ListContainer>
+        </S.PrioritiesList>
       </S.Content>
     </S.Container >
   )
