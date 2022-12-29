@@ -35,6 +35,10 @@ export const Header = styled.header`
     height: 5rem;
     width: 80%;
     margin: .4rem;
+
+    @media (max-width: 65.5rem) {
+       margin-bottom: 2rem;
+    }
 `
 
 export const Title = styled.h1`
