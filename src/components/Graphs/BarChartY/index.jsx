@@ -1,16 +1,16 @@
 import React from 'react'
-import * as S from './style'
 import { Plugin } from '../Plugin'
-import { Doughnut } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 import { FakeData } from '../../../FakeData'
 
-export const DoughnutChart = () => {
+export const BarChartY = () => {
     const [load, setLoad] = React.useState(false)
     const [userData, setUserData] = React.useState({
         labels: FakeData.map((data) => data.month),
         datasets: [
             {
-                label: "Ganhos dos últimos 6 meses",
+                label: "Total de Ganhos do mês",
+                indexAxis: 'y',
                 data: FakeData.map((data) => data.userGain),
                 backgroundColor: [
                     "#cbc3b9",
@@ -27,6 +27,6 @@ export const DoughnutChart = () => {
         ],
     });
     return (
-        <Doughnut width={250} height={250} data={userData} />
+        <Bar data={userData} />
     )
 }

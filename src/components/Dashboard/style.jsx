@@ -20,6 +20,10 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
+       margin-bottom: 5rem;
+    }
+
+    @media (max-width: 65.5rem) {
        margin-bottom: 15rem;
     }
 `
@@ -97,22 +101,28 @@ export const PreviewCash = styled.div`
     }
 `
 
-export const PreviewGraphDoughnut  = styled.div`
-    width: 20rem;
+export const PreviewGraphBarY  = styled.div`
+    width: 25rem;
     height: 10rem;
     padding: .4rem;
     border-radius: .4rem;
+    overflow: hidden;
     background: var(--background-dark);
+
+    @media (max-width: 80rem) {
+        width: 22rem;
+    }
 
     @media (max-width: 65.5rem) {
         display: none;
     }
 `
 
-export const PreviewGraphBar = styled.div`
+export const PreviewGraphBarX = styled.div`
     display: none;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     width: 100%;
     height: 10rem;
     margin: .4rem;
