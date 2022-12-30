@@ -17,8 +17,9 @@ export const Notes = () => {
   const [paymentItem, setPaymentItem] = React.useState('')
   const [paymentAmount, setPaymentAmount] = React.useState('')
   const [amount, setAmount] = React.useState(0)
-  const newPrioritiesList = { name: priorityItem }
-  const newMonthlyPaymentsList = { name: paymentItem, amount: paymentAmount }
+  const handleID = () => Math.round(Math.random() * 1000)
+  const newPrioritiesList = { name: priorityItem, id: handleID() }
+  const newMonthlyPaymentsList = { name: paymentItem, id: handleID(), amount: paymentAmount }
 
   const handleAddPrioritiesList = () => {
     const updatedPrioritiesList = [...prioritiesList, newPrioritiesList]
@@ -35,14 +36,14 @@ export const Notes = () => {
     setPaymentAmount('')
   }
 
-  const handleRemovePrioritiesList = (name) => {
-    const listUpdated = prioritiesList.filter(i => i.name !== name)
+  const handleRemovePrioritiesList = (id) => {
+    const listUpdated = prioritiesList.filter(i => i.id !== id)
     localStorage.setItem("prioritiesList", JSON.stringify(listUpdated))
     setPrioritiesList(listUpdated)
   }
 
-  const handleRemoveMonthlyPaymentsList = (name) => {
-    const listUpdated = monthlyPaymentsList.filter(i => i.name !== name)
+  const handleRemoveMonthlyPaymentsList = (id) => {
+    const listUpdated = monthlyPaymentsList.filter(i => i.id !== id)
     localStorage.setItem("paymentsList", JSON.stringify(listUpdated))
     setMonthlyPaymentsList(listUpdated)
   }
@@ -86,11 +87,11 @@ export const Notes = () => {
           </S.Header>
 
           <S.ListContainer>
-            {monthlyPaymentsList && monthlyPaymentsList.map(({ name, amount }) => (
-              <S.Lists key={name}>
+            {monthlyPaymentsList && monthlyPaymentsList.map(({ name, id, amount }) => (
+              <S.Lists key={id}>
                 <S.Items>{name}</S.Items>
                 <S.Items>R$ {amount}</S.Items>
-                <S.Delete onClick={() => handleRemoveMonthlyPaymentsList(name)}>
+                <S.Delete onClick={() => handleRemoveMonthlyPaymentsList(id)}>
                   <VscTrash />
                 </S.Delete>
               </S.Lists>
@@ -113,10 +114,10 @@ export const Notes = () => {
           </S.Header>
 
           <S.ListContainer>
-            {prioritiesList && prioritiesList.map(({ name }) => (
-              <S.Lists key={name}>
+            {prioritiesList && prioritiesList.map(({ name, id }) => (
+              <S.Lists key={id}>
                 <S.Items>{name}</S.Items>
-                <S.Delete onClick={() => handleRemovePrioritiesList(name)}>
+                <S.Delete onClick={() => handleRemovePrioritiesList(id)}>
                   <VscTrash />
                 </S.Delete>
               </S.Lists>
