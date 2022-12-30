@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './style'
 import { GrFormClose } from 'react-icons/gr'
 
-export const Modal = ({ handleAddition, setModalForm }) => {
+export const Modal = ({ handleAddition, setModal }) => {
     const [resume, setResume] = React.useState("")
     const [amount, setAmount] = React.useState("")
     const [type, setType] = React.useState("")
@@ -44,13 +44,13 @@ export const Modal = ({ handleAddition, setModalForm }) => {
         handleAddition(transaction)
         setResume("")
         setAmount("")
-        setModalForm(false)
+        setModal(false)
     }
     return (
         <S.ModalContainer>
             <S.ModalContent>
                 <S.Form>
-                    <GrFormClose onClick={() => setModalForm(false)} />
+                    <GrFormClose onClick={() => setModal(false)} />
                     <S.Value
                         type="text"
                         value={amount}
