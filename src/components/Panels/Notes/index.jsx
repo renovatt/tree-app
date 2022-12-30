@@ -65,22 +65,24 @@ export const Notes = () => {
       </S.PreviewContent>
       <S.Content>
         <S.MonthlyPayments>
-          <S.SubTitle>Pagamentos Mensais</S.SubTitle>
           <S.Header>
-            <S.Input
-              type='text'
-              required
-              value={paymentItem}
-              placeholder='Digite o mone da despesa'
-              onChange={({ target }) => setPaymentItem(target.value)} />
+            <S.SubTitle>Pagamentos Mensais</S.SubTitle>
+            <S.InputsContainer>
+              <S.Input
+                type='text'
+                required
+                value={paymentItem}
+                placeholder='Digite o mone da despesa'
+                onChange={({ target }) => setPaymentItem(target.value)} />
 
-            <S.InputNumber
-              type='text'
-              required
-              value={paymentAmount}
-              placeholder='Valor'
-              onChange={({ target }) => setPaymentAmount(target.value)} />
-            <S.Add onClick={handleAddMonthlyPaymentsList}>Salvar</S.Add>
+              <S.InputNumber
+                type='text'
+                required
+                value={paymentAmount}
+                placeholder='Valor'
+                onChange={({ target }) => setPaymentAmount(target.value)} />
+              <S.Add onClick={handleAddMonthlyPaymentsList}>Salvar</S.Add>
+            </S.InputsContainer>
           </S.Header>
 
           <S.ListContainer>
@@ -97,15 +99,17 @@ export const Notes = () => {
         </S.MonthlyPayments>
 
         <S.PrioritiesList>
-          <S.SubTitle>Lista de Prioridades</S.SubTitle>
           <S.Header>
-            <S.Input
-              type='text'
-              required
-              value={priorityItem}
-              placeholder='Digite seu item'
-              onChange={({ target }) => setPriorityItem(target.value)} />
-            <S.Add onClick={handleAddPrioritiesList}>Salvar</S.Add>
+            <S.SubTitle>Lista de Prioridades</S.SubTitle>
+            <S.InputsContainer>
+              <S.Input
+                type='text'
+                required
+                value={priorityItem}
+                placeholder='Digite seu item'
+                onChange={({ target }) => setPriorityItem(target.value)} />
+              <S.Add onClick={handleAddPrioritiesList}>Salvar</S.Add>
+            </S.InputsContainer>
           </S.Header>
 
           <S.ListContainer>

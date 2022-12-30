@@ -20,7 +20,7 @@ export const Container = styled.section`
     }
 
     @media (max-width: 70rem) {
-       margin-bottom: 8rem;
+       margin-bottom: 2rem;
     }
 
     @media (max-width: 60rem) {
@@ -35,7 +35,12 @@ export const PreviewContent = styled.div`
     flex-direction: column;
     width: 80%;
     margin: 2rem;
-    height: 10rem;
+    height: 8rem;
+`
+
+export const Title = styled.h1`
+    font-size: 1.5rem;
+    color: var(--text-default);
 `
 
 export const Content = styled.div`
@@ -44,23 +49,11 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 80%;
     height: 25rem;
+    padding: .4rem;
 
     @media (max-width: 60rem) {
         width: 100%;
         flex-direction: column;
-    }
-`
-
-export const PrioritiesList = styled.div`
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    height: 25rem;
-
-    @media (max-width: 60rem) {
-        width: 90%;
     }
 `
 
@@ -69,35 +62,56 @@ export const MonthlyPayments = styled.div`
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     height: 25rem;
 
     @media (max-width: 60rem) {
         width: 90%;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 `
 
-export const Title = styled.h1`
-    font-size: 1.5rem;
-    color: var(--text-default);
-`
+export const PrioritiesList = styled.div`
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 25rem;
 
-export const SubTitle = styled.h3`
-    color: var(--text-default);
+    @media (max-width: 60rem) {
+        width: 90%;
+    }
 `
 
 export const Header = styled.div`
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 5rem;
+    margin-bottom: .4rem;
+    border-radius: .4rem;
+    padding: .8rem 0;
+    background: var(--background-dark);
+`
+
+export const SubTitle = styled.h4`
+    color: var(--text-default);
+    padding: .2rem .8rem;
+`
+
+export const InputsContainer = styled.div`
+    display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 5rem;
-    margin: .8rem .4rem;
+    height: auto;
 `
 
 export const Input = styled.input`
-    width: 15rem;
+    width: 10rem;
     height: 2rem;
     outline: none;
     border: none;
@@ -124,19 +138,17 @@ export const InputNumber= styled.input`
 
 export const Add = styled.button`
     width: 5rem;
-    height: 2rem;
+    height: 1.5rem;
     font-weight: bold;
     border: none;
     outline: none;
     border-radius: .4rem;
-    color: var(--text-default);
-    background: var(--background-dark);
+    color: var(--background-dark);
+    background: var(--background-white);
     transition: all .2s;
 
     &:hover{
         cursor: pointer;
-        color: var(--background-dark);
-        background: var(--background-white);
     }
 
     @media (max-width: 70rem) {
@@ -151,11 +163,13 @@ export const ListContainer = styled.div`
     justify-content: start;
     flex-direction: column;
     width: 100%;
-    min-height: 21.3rem;
+    min-height: 10rem;
     height: auto;
     padding: .4rem;
     margin: .2rem 0;
+    border-radius: .4rem;
     overflow-y: scroll;
+    background: var(--background-dark);
 
     ::-webkit-scrollbar{
         width: 6px;
@@ -165,14 +179,14 @@ export const ListContainer = styled.div`
         border-radius: .4rem;
     }
     ::-webkit-scrollbar-thumb{
-        background: var(--background-dark);
+        background: var(--background-dark-smooth);
         border-radius: .4rem;
     }
 `
 
 export const Lists = styled.span`
     width: 95%;
-    height: 4rem;
+    height: 3rem;
     border-radius: .4rem;
     margin: .1rem;
     padding: 1rem;
@@ -181,7 +195,7 @@ export const Lists = styled.span`
     align-items: center;
     justify-content: space-between;
     color: var(--text-default);
-    background: var(--background-dark);
+    background: var(--background-dark-shadow);
 `
 
 export const Items = styled.span`
@@ -199,8 +213,8 @@ export const Delete = styled.button`
 
     svg{
         color: var(--text-default);
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.3rem;
+        height: 1.3rem;
         transition: all .2s;
     }
 

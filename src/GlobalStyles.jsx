@@ -15,6 +15,7 @@ export const GlobalStyled = createGlobalStyle`
     --background-white:#fff;
     --background-dark: #101010;
     --background-dark-smooth:#272727;
+    --background-dark-shadow:#1d1d1d;
 }
 
 
