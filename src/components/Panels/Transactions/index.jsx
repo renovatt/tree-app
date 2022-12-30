@@ -1,10 +1,10 @@
 import React from 'react'
 import * as S from './style'
-import { PreviewCashCard } from '../PreviewCashCard'
+import { BiTransfer } from 'react-icons/bi'
 import { TfiStatsUp } from 'react-icons/tfi'
 import { TfiStatsDown } from 'react-icons/tfi'
-import { BiTransfer } from 'react-icons/bi'
-import { DashTable } from '../Tables/DashTable'
+import { DashTable } from '../../Resources/Tables/DashTable'
+import { DefaultPreview } from '../../Resources/Previews/DefaultPreview'
 
 export const Transactions = () => {
   const dataBase = localStorage.getItem("transactions")
@@ -57,17 +57,17 @@ export const Transactions = () => {
         <S.Title>Transações Mensais</S.Title>
       </S.Header>
       <S.Content>
-        <PreviewCashCard
+        <DefaultPreview
           value={wallet}
           text={'Faturamento'}
           svg={<BiTransfer color='#f9004d' />} />
 
-        <PreviewCashCard
+        <DefaultPreview
           value={earn}
           text={'Ganhos'}
           svg={<TfiStatsUp color='#22c55e' />} />
 
-        <PreviewCashCard
+        <DefaultPreview
           value={spent}
           text={'Gastos'}
           svg={<TfiStatsDown color='#ef4444' />} />

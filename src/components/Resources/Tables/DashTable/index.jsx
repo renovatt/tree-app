@@ -1,8 +1,8 @@
 import React from 'react'
-import { ItemListTables } from '../ItemListTables'
+import { ItemListTable } from '../ItemListTable'
 import { TfiStatsUp } from 'react-icons/tfi'
 import { TfiStatsDown } from 'react-icons/tfi'
-import error from '../../../assets/error.png'
+import { Error } from '../../../Helper/Error'
 import * as S from './style'
 
 export const DashTable = ({ transactionsList }) => {
@@ -10,7 +10,7 @@ export const DashTable = ({ transactionsList }) => {
         <S.Container>
             <S.Table>
                 {transactionsList.length > 0 ? transactionsList.map((list, index) => (
-                    <ItemListTables
+                    <ItemListTable
                         key={index}
                         resume={list.resume}
                         amount={list.amount}
@@ -19,10 +19,7 @@ export const DashTable = ({ transactionsList }) => {
                         svg={list.type === 'earn' ?
                             <TfiStatsUp /> : <TfiStatsDown />} />
                 )) : (
-                    <S.ImageContainer>
-                        <S.Image onLoad={({ target }) => target.style.opacity = 1} src={error} />
-                        <S.Desc>Não existe dados para este mês</S.Desc>
-                    </S.ImageContainer>
+                    <Error text={'Não existe dados para este mês'} />
                 )}
             </S.Table>
         </S.Container>

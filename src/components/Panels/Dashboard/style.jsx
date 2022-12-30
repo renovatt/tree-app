@@ -90,7 +90,7 @@ export const Content = styled.div`
     }
 `
 
-export const PreviewCash = styled.div`
+export const CashPreview = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;

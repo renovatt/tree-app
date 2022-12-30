@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './style'
 import { VscTrash } from 'react-icons/vsc'
 import { TfiStatsDown } from 'react-icons/tfi'
-import { PreviewCashCard } from '../PreviewCashCard'
+import { DefaultPreview } from '../../Resources/Previews/DefaultPreview'
 
 export const Notes = () => {
   const priorityDataBase = localStorage.getItem("prioritiesList")
@@ -58,7 +58,7 @@ export const Notes = () => {
     <S.Container>
       <S.PreviewContent>
         <S.Title>Anotações</S.Title>
-        <PreviewCashCard
+        <DefaultPreview
           svg={<TfiStatsDown color='#ef4444' />}
           text={'Sua Despesa Mensal'}
           value={amount} />

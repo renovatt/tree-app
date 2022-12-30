@@ -1,13 +1,13 @@
 import React from 'react'
 import * as S from './style'
-import { ModalForm } from '../ModalForm'
-import { DashCashCard } from '../DashCashCard'
-import { DashTable } from '../Tables/DashTable'
-import { BarChartX } from '../Graphs/BarChartX/index.jsx'
-import { BarChartY } from '../Graphs/BarChartY/index.jsx'
+import { Modal } from '../../Layout/Modal'
+import { DashboardPreview } from '../../Resources/Previews/DashboardPreview'
+import { DashTable } from '../../Resources/Tables/DashTable'
+import { BarChartX } from '../../Resources/Graphics/BarChartX/index.jsx'
+import { BarChartY } from '../../Resources/Graphics/BarChartY/index.jsx'
 
 export const Dashboard = ({ wallet, handleAddition, transactionsList }) => {
-  const [modalForm, setModalForm] = React.useState(false)
+  const [modal, setModal] = React.useState(false)
   return (
     <S.Container>
       <S.Header>
@@ -15,10 +15,10 @@ export const Dashboard = ({ wallet, handleAddition, transactionsList }) => {
         <S.Logo>WL</S.Logo>
       </S.Header>
       <S.Content>
-        <S.PreviewCash>
-          <DashCashCard text={"Seu saldo"} value={wallet} />
-          <S.Add onClick={() => setModalForm(true)}>+</S.Add>
-        </S.PreviewCash>
+        <S.CashPreview>
+          <DashboardPreview text={"Seu saldo"} value={wallet} />
+          <S.Add onClick={() => setModal(true)}>+</S.Add>
+        </S.CashPreview>
         <S.PreviewGraphBarY>
           <BarChartY />
         </S.PreviewGraphBarY>
@@ -30,8 +30,8 @@ export const Dashboard = ({ wallet, handleAddition, transactionsList }) => {
         <S.Desc>Últimas Transações</S.Desc>
       </S.HeaderDash>
       <DashTable transactionsList={transactionsList} />
-      {modalForm && <ModalForm
-        handleAddition={handleAddition} setModalForm={setModalForm} />}
+      {modal && <Modal
+        handleAddition={handleAddition} setModal={setModal} />}
     </S.Container>
   )
 }

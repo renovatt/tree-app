@@ -1,16 +1,14 @@
 import React from 'react'
 import { Plugin } from '../Plugin'
 import { Bar } from 'react-chartjs-2'
-import { FakeData } from '../../../FakeData'
+import { FakeData } from '../../../../FakeData'
 
-export const BarChartY = () => {
-    const [load, setLoad] = React.useState(false)
+export const BarChartX = () => {
     const [userData, setUserData] = React.useState({
         labels: FakeData.map((data) => data.month),
         datasets: [
             {
                 label: "Total de Ganhos do mês",
-                indexAxis: 'y',
                 data: FakeData.map((data) => data.userGain),
                 backgroundColor: [
                     "#cbc3b9",
@@ -26,6 +24,7 @@ export const BarChartY = () => {
             },
         ],
     });
+
     return (
         <Bar data={userData} />
     )

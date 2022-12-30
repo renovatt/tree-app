@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './style'
 
-export const DashCashCard = ({ value, text, svg }) => {
+export const DashboardPreview = ({ value, text, svg }) => {
     return (
         <S.Container>
             <S.Card>

@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './style'
 
-export const ItemListTables = ({ resume, amount, date, svg, color }) => {
+export const ItemListTable = ({ resume, amount, date, svg, color }) => {
     return (
         <S.Container>
             <S.ContentLeft>

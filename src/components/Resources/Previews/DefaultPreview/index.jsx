@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './style'
 
-export const PreviewCashCard = ({ value, text, svg }) => {
+export const DefaultPreview = ({ value, text, svg }) => {
     return (
         <S.Container>
             <S.Card>

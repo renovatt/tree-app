@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './style'
-import soon from '../../assets/soon.png'
+import soon from '../../../assets/soon.png'
 
 export const Stats = () => {
   return (

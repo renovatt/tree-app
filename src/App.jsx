@@ -2,10 +2,10 @@ import React from 'react';
 import { GlobalStyled } from './GlobalStyles';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavBar } from "./components/Layout/NavBar";
-import { Dashboard } from './components/Dashboard'
-import { Transactions } from './components/Transactions';
-import { Stats } from './components/Stats';
-import { Notes } from './components/Notes';
+import { Dashboard } from './components/Panels/Dashboard'
+import { Transactions } from './components/Panels/Transactions';
+import { Stats } from './components/Panels/Stats';
+import { Notes } from './components/Panels/Notes';
 
 
 function App() {
