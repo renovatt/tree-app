@@ -5,14 +5,10 @@ export const ModalContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 4rem;
+    top: 4rem;
     z-index: 999;
     width: 100%;
     background: transparent;
-
-    @media(max-width: 80rem) {
-        bottom: 7rem;
-    }
 
     @media(max-width: 60rem) {
         width: 60%;
