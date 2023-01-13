@@ -54,7 +54,7 @@ export const Form = styled.form`
     }
 
     @media(max-width: 60rem) {
-        width: 60%;
+        width: 80%;
     }
 `
 
