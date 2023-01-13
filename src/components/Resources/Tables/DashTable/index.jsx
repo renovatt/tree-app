@@ -1,25 +1,34 @@
 import React from 'react'
-import { ItemListTable } from '../ItemListTable'
-import { TfiStatsUp } from 'react-icons/tfi'
-import { TfiStatsDown } from 'react-icons/tfi'
-import { Error } from '../../../Helper/Error'
 import * as S from './style'
+import { TrasactionNotFound } from '../../../Helper/TrasactionNotFound'
+import { ItemListTable } from '../ItemListTable'
+import { HiArrowTrendingUp, HiArrowTrendingDown } from 'react-icons/hi2'
 
-export const DashTable = ({ transactionsList }) => {
+export const DashTable = ({ firebaseTransactionData }) => {
+
+    const trasactionRef = React.useRef(null)
+
+    React.useEffect(() => {
+        trasactionRef.current.scrollTo(0, -trasactionRef.current.scrollHeight)
+    }, [firebaseTransactionData])
+
     return (
         <S.Container>
-            <S.Table>
-                {transactionsList.length > 0 ? transactionsList.map((list, index) => (
-                    <ItemListTable
-                        key={index}
-                        resume={list.resume}
-                        amount={list.amount}
-                        date={list.date}
-                        color={list.type === 'earn' ? "#22c55e" : "#ef4444"}
-                        svg={list.type === 'earn' ?
-                            <TfiStatsUp /> : <TfiStatsDown />} />
-                )) : (
-                    <Error text={'Não existe dados para este mês'} />
+            <S.Table ref={trasactionRef}>
+                {firebaseTransactionData.length ? firebaseTransactionData
+                    .map((list, index) => (
+                        <ItemListTable
+                            key={index}
+                            id={list.id}
+                            resume={list.resume}
+                            amount={list.amount}
+                            date={list.date}
+                            color={!list.expense ? "#22c55e" : "#ef4444"}
+                            svg={!list.expense ?
+                                <HiArrowTrendingUp /> : <HiArrowTrendingDown />
+                            } />
+                    )) : (
+                    <TrasactionNotFound text={'Não existe dados para este mês'} />
                 )}
             </S.Table>
         </S.Container>

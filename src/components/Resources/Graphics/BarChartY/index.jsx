@@ -1,32 +1,54 @@
 import React from 'react'
+import * as S from './style'
 import { Plugin } from '../Plugin'
 import { Bar } from 'react-chartjs-2'
-import { FakeData } from '../../../../FakeData'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../../../../services/firebase'
+import { handleTransactionObserver } from '../../../../conections/transactions'
+import {
+    calculateTotals,
+    chartConfigY,
+    createMonthObject
+} from '../../../../conections/chartJS'
+import { ChartJSDefault } from '../../../Helper/ChartJSDefault'
 
 export const BarChartY = () => {
-    const [load, setLoad] = React.useState(false)
-    const [userData, setUserData] = React.useState({
-        labels: FakeData.map((data) => data.month),
+
+    const [user] = useAuthState(auth);
+    const [firebaseTransactionData, setFirebaseTransactionData] = React.useState([])
+    const [monthObject, setMonthObject] = React.useState([])
+    const [totalsByMonth, setTotalsByMonth] = React.useState([]);
+    const [chartData, setChartData] = React.useState({
+        labels: [],
         datasets: [
             {
-                label: "Total de Ganhos do mês",
+                label: "Faturamento dos últimos 6 meses",
                 indexAxis: 'y',
-                data: FakeData.map((data) => data.userGain),
-                backgroundColor: [
-                    "#cbc3b9",
-                    "#2f2d2b",
-                    "#1ac7c7",
-                    "#c7731a",
-                    "#d6178a",
-                    "#2a71d0",
-                    "#f3ba2f",
-                    "#e10f24",
-                ],
-                borderWidth: 0,
+                data: [],
             },
         ],
-    });
+    })
+
+    React.useEffect(() => {
+        handleTransactionObserver(user.uid, setFirebaseTransactionData)
+        return () => handleTransactionObserver(user.uid, setFirebaseTransactionData)
+    }, [])
+
+    React.useEffect(() => {
+        createMonthObject(firebaseTransactionData, setMonthObject)
+    }, [firebaseTransactionData])
+
+    React.useEffect(() => {
+        calculateTotals(monthObject, setTotalsByMonth);
+    }, [monthObject])
+
+    React.useEffect(() => {
+        chartConfigY(totalsByMonth, setChartData)
+    }, [totalsByMonth])
+
     return (
-        <Bar data={userData} />
+        <S.Container>
+            {chartData.labels.length ? <Bar data={chartData} /> : <ChartJSDefault text={"Faturamento dos últimos 6 meses"} />}
+        </S.Container>
     )
 }

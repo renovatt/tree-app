@@ -8,7 +8,7 @@ export const Container = styled.div`
     height: 20.9rem;
     width: 88.9%;
     border-radius: .4rem;
-    background-color: #272727;
+    background-color: var(--background-dark-smooth);
 `
 
 export const Table = styled.div`
@@ -19,16 +19,16 @@ export const Table = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
     width: 95%;
-
+    
     ::-webkit-scrollbar{
         width: 6px;
     }
     ::-webkit-scrollbar-track{
-        background-color: #27272a;
+        background-color: var(--background-dark-smooth);
         border-radius: .4rem;
     }
     ::-webkit-scrollbar-thumb{
-        background: #101010;
+        background: var(--background-dark-smooth);
         border-radius: .4rem;
     }
 `
@@ -62,6 +62,6 @@ export const Image = styled.img`
 `
 
 export const Desc = styled.p`
-    color: #fff;
+    color: var(--text-default);
     font-size: 1rem;
 `

@@ -16,19 +16,28 @@ export const Card = styled.div`
     min-width: 8rem;
     min-height: 3rem;
     border-radius: .4rem;
+    position: relative;
 
     svg{
-        width: 2.5rem;
-        height: 2.5rem;
-        color:#fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.3rem;
+        height: 1.3rem;
+        color:var(--text-default);
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover{
+            color: var(--decoration);
+        }
     }
 
     @media(max-width: 63.96rem){
-        width: 10rem;
+        width: 100%;
     }
 
     @media(max-width: 43.96rem){
-        height: 3rem;
         margin: .4rem;
 
         svg{
@@ -44,11 +53,22 @@ export const Content = styled.div`
 `
 
 export const Text = styled.p`
-    color: #fff;
+    color: var(--text-default);
     font-size: .8rem;
 `
 
 export const Value = styled.span`
-    color: #fff;
+    color: var(--text-default);
     font-size: 1.2rem;
+    transition: .3s;
+    animation: fadeOut .3s ease-in-out forwards;
+
+    @keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 `

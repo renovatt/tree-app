@@ -19,13 +19,8 @@ export const Card = styled.div`
     padding: .4rem;
     background: var(--background-dark);
 
-    @media (max-width: 70rem) {
-        width: 10rem;
-        height: 5rem;
-    }
-
-    @media (max-width: 60rem) {
-        height: 5rem;
+    @media (max-width: 50rem) {
+        width: auto;
     }
 `
 
@@ -36,26 +31,31 @@ export const Content = styled.div`
 `
 
 export const Text = styled.p`
-    color: #fff;
+    color: var(--text-default);
     font-size: 1rem;
     padding: .4rem;
 
-    @media (max-width: 70rem) {
-        font-size: .8rem;
+    @media (max-width: 50rem) {
+        font-size: .7rem;
     }
 `
 
 export const Value = styled.span`
-    color: #fff;
+    color: var(--text-default);
     font-size: 1.5rem;
     padding: .4rem;
 
-    @media (max-width: 70rem) {
-        font-size: 1rem;
+    @media (max-width: 50rem) {
+        font-size: .7rem;
     }
 
     svg{
         width: 1.5rem;
         height: 1.5rem;
+
+        @media (max-width: 50rem) {
+            width: 1rem;
+            height: 1rem;
+        }
     }
 `
