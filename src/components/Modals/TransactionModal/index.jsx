@@ -12,7 +12,7 @@ export const TransactionModal = ({ setTransactionModal }) => {
     const [resume, setResume] = React.useState("")
     const [amount, setAmount] = React.useState("")
     const [isExpense, setExpense] = React.useState(false)
-    const [successTransactionModal, setSuccessTransactionModal] = React.useState(true)
+    const [successTransactionModal, setSuccessTransactionModal] = React.useState(false)
 
     async function handleSaveTransaction(e) {
         e.preventDefault()
