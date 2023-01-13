@@ -45,6 +45,7 @@ export const Form = styled.form`
     opacity: 0;
     transform: translateX(-20px);
     animation: fade .3s forwards;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 
     @keyframes fade{
         to{
@@ -54,7 +55,7 @@ export const Form = styled.form`
     }
 
     @media(max-width: 60rem) {
-        width: 80%;
+        width: 90%;
     }
 `
 
@@ -89,6 +90,7 @@ export const ValuePreview = styled.input`
     color: var(--text-default);
     background: var(--background-dark);
     transition: .3s;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 
     &:focus{
         border: 1px solid var(--decoration);
@@ -115,6 +117,7 @@ export const TitleTransaction = styled.input`
     border-bottom: 1px solid var(--text-default);
     background: transparent;
     transition: .3s;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 
     &:focus{
         border-bottom: 1px solid var(--decoration);
@@ -129,6 +132,7 @@ export const InputsContainer = styled.div`
     border-radius: .4rem;
     width: 50%;
     height: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 `
 
 export const Label = styled.label`
@@ -182,14 +186,15 @@ export const Add = styled.button`
     margin: .4rem;
     outline: none;
     transition: .2s;
+    font-weight: bold;
     color: var(--text-default);
     border-radius: .4rem;
-    background: var(--background-dark);
+    background: var(--decoration);
 
     &:hover{
         cursor: pointer;
-        color: var(--text-default);
-        background: var(--decoration);
+        color: var(--decoration);
+        background: var(--background-white);
     }
 `
 

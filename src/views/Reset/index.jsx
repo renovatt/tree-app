@@ -19,6 +19,7 @@ export const Reset = () => {
                     <S.Logo src={logo} />
                 </S.GrowingPlant>
                 <S.Title>Tree</S.Title>
+                <S.Span>Seu Aplicativo para controle de finanças</S.Span>
             </S.LogoContainer>
             <S.Content>
                 <S.Form onSubmit={handleResetPassword}>

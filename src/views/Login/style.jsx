@@ -61,6 +61,8 @@ export const GrowingPlant = styled.div`
   }
 
   @media(max-width: 40rem) {
+        width: 90px;
+        height: 90px;
         margin-top: 2rem;
     }
 `
@@ -80,8 +82,20 @@ export const Title = styled.p`
     text-shadow: 2px 5px 5px var(--background-dark);
 
     @media(max-width: 40rem) {
-        margin-top: 0;
-        margin-bottom:2rem;
+        margin-bottom: .2rem;
+        margin-top: .2rem;
+    }
+`
+
+export const Span = styled.span`
+    color: var(--text-default);
+    font-size: .8rem;
+    margin-top: .8rem;
+    text-shadow: 2px 5px 5px var(--background-dark);
+
+    @media(max-width: 40rem) {
+        margin-bottom: .8rem;
+        margin-top: .2rem;
     }
 `
 
@@ -97,6 +111,7 @@ export const Content = styled.section`
 
     @media(max-width: 40rem) {
         width: 100%;
+        margin-top: .4rem;
         border-radius: 4rem 4rem 0 0;
         box-shadow: 15px 0px 35px rgba(0, 0, 0, 0.25);
     }
@@ -108,6 +123,7 @@ export const Form = styled.form`
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    margin-top: .8rem;
     margin-bottom: .4rem;
 `
 
