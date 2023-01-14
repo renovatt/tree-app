@@ -20,6 +20,10 @@ export const Container = styled.section`
         transform: initial;
         }
     }
+    
+    @media (max-width: 80rem) {
+        width: 90%;
+    }
 `
 
 export const MonthlyPayments = styled.div`

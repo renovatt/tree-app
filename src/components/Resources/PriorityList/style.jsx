@@ -34,6 +34,10 @@ export const PrioritiesList = styled.div`
     width: 100%;
     height: auto;
     max-height: 28rem;
+
+    @media (max-width: 45rem) {
+        max-height: 33rem ;
+    }
 `
 
 export const Header = styled.div`
@@ -80,8 +84,8 @@ export const Input = styled.input`
     text-align: center;
     background: transparent;
     color: var(--text-default);
-    transition: .3s;
     border-bottom: 1px solid var(--text-default);
+    transition: .3s;
 
     &:focus{
         border-bottom: 1px solid var(--decoration);

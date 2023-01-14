@@ -25,10 +25,6 @@ export const Container = styled.section`
        justify-content: center;
        height: auto;
     }
-
-    @media (max-width: 65.5rem) {
-       /* margin-bottom: 10rem; */
-    }
 `
 export const PreviewContent = styled.div`
     display: flex;
