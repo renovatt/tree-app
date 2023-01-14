@@ -44,8 +44,8 @@ export const GrowingPlant = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: growAnimation 1s ease-in-out;
-    transform-origin: bottom center;
+    animation: growAnimation .5s ease-in-out;
+    /* transform-origin: bottom center; */
     width: 150px;
     height: 150px;
     border-radius: 50%;
