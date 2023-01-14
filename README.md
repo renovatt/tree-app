@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+<!-- ![status](https://img.shields.io/github/repo-size/renovatt/tree-app)
+![status](https://img.shields.io/github/languages/count/renovatt/tree-app)
+![status](https://img.shields.io/github/languages/top/renovatt/tree-app)
+![status](https://img.shields.io/github/last-commit/renovatt/tree-app) -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- #### Há algum tempo estava querendo criar meu próprio aplicativo de finanças, a ideia era suprir apenas minhas necessidades, já que mantenho minhas anotações salvas no Excel, porém, queria algo mais dinâmico onde eu poderia registrar minhas despesas de onde eu quisesse, depois de estudar bastante consegui aplicar meus conhecimentos. Nesse App é possível registrar quantas despesas vocês desejarem de forma segura dentro da sua própria conta! Você pode fazer um registro no aplicativo ou logar com sua conta Google. O App traz uma lista de todas as suas finanças, onde você pode filtrar por mês e ano obtendo os valores de ganhos, gastos e faturamentos. Ele ainda possui uma visualização dos faturamentos dos últimos 6 meses e campos para deixar suas anotações que costumam ser despesas mensais e uma lista de prioridades, para ajudar você seguir a sua meta. -->
 
-## Available Scripts
+#
 
-In the project directory, you can run:
+<div align='center'>
+<h1>Tree <br> <br>
+<p>Aplicativo para controle de fincanças</p>
+<img src="./public/logo.png" width="30px"></h1>
+</div>
 
-### `npm start`
+## Descrição
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Ver Projeto](https://tree-app-renovatt.vercel.app) 💰
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Desenvolvi um aplicativo de finanças para atender minhas necessidades pessoais. Ele permite registrar despesas de forma segura e acessí-las de qualquer lugar, além de oferecer filtragem por mês e ano, visualização de faturamentos dos últimos 6 meses, campos para anotações e lista de prioridades. Estou cada vez mais feliz pelo meu progresso e por hora, este é o resultado do projeto, quem sabe mais aplicações podem surgir no futuro.
 
-### `npm test`
+#
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## _Layout Mobile_
 
-### `npm run build`
+![Mobile 1](./public/mobile-1.png) ![Mobile 2](./public/mobile-2.png) 
+#
+![Mobile ](./public/mobile-3.png) 
+#
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## _Layout Web_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Web 1](./public/web-1.png)
+#
+![Web 2](./public/web-2.png)
+#
+![Web 3](./public/web-3.png)
+#
+![Web 4](./public/web-4.png)
+#
 
-### `npm run eject`
+## 💻 Tecnologias
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🛠️ **Construção do site**
+- [React](https://create-react-app.dev/)
+- [React Router](https://reactrouter.com/)
+- [Chart.js](https://www.chartjs.org)
+- [Node e NPM](https://nodejs.org/)
+- [AwesomeApi](https://docs.awesomeapi.com.br/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+📁 **Banco de Dados**
+- [Firebase](https://firebase.google.com/?hl=pt)
+- [Firebase Authentication](https://firebase.google.com/docs/auth)
+- [Firebase Firestorage](https://firebase.google.com/docs/firestore)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🎨 **Estilização**
+- [Styled-Components](https://styled-components.com/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🔋 **Versionamento e Deploy**
+- [Git](https://git-scm.com)
+- [Vercel](https://vercel.com/)
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+⚙️ **Configuranções e Instalações**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clone do Projeto
 
-### Code Splitting
+    $ git clone https://github.com/renovatt/tree-app.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Instalando as Dependências
 
-### Analyzing the Bundle Size
+    $ npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Iniciando o Projeto
 
-### Making a Progressive Web App
+    $ npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
 
-### Advanced Configuration
+**Como contribuir?**
+##### Você pode dar suporte me seguindo aqui no GitHub, dando uma estrela no projeto ou criar uma conexão comigo no linkedin, fazendo parte da minha Networking e curtir o meu projeto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Autor**
+##### Criado por [*Wildemberg Renovato de Lima*]("https://www.linkedin.com/in/renovatt/)
