@@ -33,7 +33,7 @@ export const MonthlyPayments = styled.div`
     flex-direction: column;
     width: 100%;
     height: auto;
-    max-height: 25rem;
+    max-height: 27rem;
 `
 
 export const Header = styled.div`

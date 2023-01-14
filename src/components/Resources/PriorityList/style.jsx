@@ -36,7 +36,7 @@ export const PrioritiesList = styled.div`
     max-height: 28rem;
 
     @media (max-width: 45rem) {
-        max-height: 33rem ;
+        max-height: 35rem ;
     }
 `
 
