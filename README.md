@@ -85,4 +85,4 @@ Iniciando o Projeto
 <br>
 
 **Autor**
-##### Criado por [*Wildemberg Renovato de Lima*]("https://www.linkedin.com/in/renovatt/)
+[*Wildemberg Renovato de Lima*](https://www.linkedin.com/in/renovatt/)
