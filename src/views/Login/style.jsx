@@ -49,7 +49,6 @@ export const GrowingPlant = styled.div`
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 
   @keyframes growAnimation{
     0% {
@@ -72,13 +71,14 @@ export const Logo = styled.img`
     width: 100%;
     width: 100%;
     margin-bottom: .4rem;
+    filter: drop-shadow(0 0 0.75rem rgb(21, 21, 21));
 `
 
 export const Title = styled.p`
     color: var(--decoration);
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 2rem;
+    margin-top: .4rem;
     text-shadow: 2px 5px 5px var(--background-dark);
 
     @media(max-width: 40rem) {

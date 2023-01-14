@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './style'
 import { sendPasswordReset } from '../../conections/auth';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/tree-logo.png'
 
 export const Reset = () => {
     const [email, setEmail] = React.useState('')
