@@ -38,11 +38,17 @@ export const Lists = styled.span`
     background: var(--background-dark-shadow);
 `
 
-export const Resume = styled.h4`
-    min-width: 5rem;
+export const Resume = styled.p`
+    min-width: 12rem;
+    font-size: .9rem;
+    font-weight: bold;
     
     &::first-letter {
         text-transform: uppercase;
+    }
+
+    @media (max-width: 45rem) {
+       min-width: 8rem;
     }
 `
 

@@ -10,7 +10,7 @@ export const ItemListMonthlyExpense = ({ id, resume, amount }) => {
     return (
         <S.Container>
             <S.Lists key={id}>
-                <S.Items>{resume}</S.Items>
+                <S.Resume>{resume}</S.Resume>
                 <S.Items>
                     {amount ? Number(amount).toLocaleString('pt-br', {
                         style: 'currency',
