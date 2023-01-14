@@ -31,7 +31,6 @@ export const PriorityList = () => {
     React.useEffect(() => {
         listRef.current.scrollTo(0, -listRef.current.scrollHeight)
     }, [firebasePriorityListData])
-
     return (
         <S.Container>
             <S.PrioritiesList>
@@ -41,6 +40,7 @@ export const PriorityList = () => {
                         <S.Input
                             type='text'
                             required
+                            maxLength="23"
                             value={resume}
                             placeholder='Digite seu item'
                             onChange={({ target }) => setResume(target.value)} />
