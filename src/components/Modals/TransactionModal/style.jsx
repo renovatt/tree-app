@@ -189,12 +189,12 @@ export const Add = styled.button`
     font-weight: bold;
     color: var(--text-default);
     border-radius: .4rem;
-    background: var(--decoration);
+    background: var(--background-white);
 
     &:hover{
         cursor: pointer;
         color: var(--decoration);
-        background: var(--background-white);
+        background: var(--decoration);
     }
 `
 
