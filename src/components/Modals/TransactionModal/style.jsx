@@ -187,13 +187,13 @@ export const Add = styled.button`
     outline: none;
     transition: .2s;
     font-weight: bold;
-    color: var(--text-default);
     border-radius: .4rem;
+    color: var(--decoration);
     background: var(--background-white);
 
     &:hover{
         cursor: pointer;
-        color: var(--decoration);
+        color: var(--text-default);
         background: var(--decoration);
     }
 `
