@@ -33,7 +33,7 @@ export const PrioritiesList = styled.div`
     flex-direction: column;
     width: 100%;
     height: auto;
-    max-height: 25rem;
+    max-height: 28rem;
 `
 
 export const Header = styled.div`

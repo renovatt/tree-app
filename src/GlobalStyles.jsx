@@ -31,6 +31,10 @@ export const GlobalStyled = createGlobalStyle`
     border-radius: .4rem;
 }
 
+::selection{
+    background: transparent;
+}
+
 html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
