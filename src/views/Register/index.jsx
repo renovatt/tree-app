@@ -4,7 +4,7 @@ import { auth } from '../../services/firebase'
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { registerWithEmailAndPassword } from '../../conections/auth';
-import logo from '../../assets/tree-logo.png'
+import logo from '../../assets/logo.png'
 
 export const Register = () => {
     const [name, setName] = React.useState('')

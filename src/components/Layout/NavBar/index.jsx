@@ -4,7 +4,7 @@ import { auth } from '../../../services/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { GoNote } from 'react-icons/go'
 import { BiTransfer } from 'react-icons/bi'
-import { GiBurningTree } from 'react-icons/gi'
+import { ReactComponent as Logo } from '../../../assets/logo.svg'
 import { AiFillLinkedin } from 'react-icons/ai'
 import { BsBank2, BsGithub } from 'react-icons/bs'
 import { MdOutlinePayments } from 'react-icons/md'
@@ -20,7 +20,7 @@ export const NavBar = () => {
                     <S.ListContainer>
                         <S.List>
                             <S.NavLink to='/'>
-                                <S.Icon><GiBurningTree /></S.Icon>
+                                <S.Icon><Logo /></S.Icon>
                                 <S.Title>Tree</S.Title>
                             </S.NavLink>
                         </S.List>
