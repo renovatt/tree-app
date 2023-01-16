@@ -40,12 +40,14 @@ export const MonthlyExpenses = () => {
                         <S.Input
                             type='text'
                             value={resume}
+                            maxLength="23"
                             placeholder='Digite sua despesa'
                             onChange={({ target }) => setResume(target.value)} />
 
                         <S.InputNumber
                             type='text'
                             value={amount}
+                            maxLength="8"
                             placeholder='Valor'
                             onChange={({ target }) => setAmount(target.value)} />
                         <S.Add onClick={handleSaveMonthlyExpense}>Salvar</S.Add>
