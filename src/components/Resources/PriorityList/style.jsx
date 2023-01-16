@@ -81,7 +81,7 @@ export const Input = styled.input`
     height: 2rem;
     outline: none;
     border: none;
-    text-align: center;
+    text-align: start;
     background: transparent;
     color: var(--text-default);
     border-bottom: 1px solid var(--text-default);
