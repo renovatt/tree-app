@@ -25,11 +25,8 @@
 
 ![Mobile 1](./public/mobile-1.png) ![Mobile 2](./public/mobile-2.png) 
 #
-![Mobile ](./public/mobile-3.png) 
-#
 
 ## _Layout Web_
-
 
 ![Web 1](./public/web-1.png)
 #
