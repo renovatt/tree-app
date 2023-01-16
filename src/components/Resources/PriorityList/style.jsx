@@ -169,8 +169,6 @@ export const Add = styled.button`
     border: none;
     outline: none;
     border-radius: .4rem;
-    color: var(--decoration);
-    background: var(--background-white);
     transition: all .2s;
 
     &:hover{
