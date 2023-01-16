@@ -106,12 +106,13 @@ export const Add = styled.button`
     border: none;
     outline: none;
     border-radius: .4rem;
-    color: var(--background-dark);
+    color: var(--decoration);
     background: var(--background-white);
     transition: all .2s;
 
     &:hover{
         cursor: pointer;
+        color: var(--text-default);
         background: var(--decoration);
     }
 

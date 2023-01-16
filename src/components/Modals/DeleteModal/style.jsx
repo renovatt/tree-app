@@ -73,9 +73,9 @@ export const Add = styled.button`
     margin: .4rem;
     outline: none;
     transition: .2s;
-    color: var(--text-default);
     border-radius: .4rem;
-    background: #101010;
+    color: var(--decoration);
+    background: var(--background-white);
 
     &:hover{
         cursor: pointer;
