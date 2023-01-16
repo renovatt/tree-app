@@ -46,12 +46,14 @@ export const TransactionModal = ({ setTransactionModal }) => {
                         <S.ValuePreview
                             type="text"
                             value={amount}
+                            maxLength={5}
                             placeholder="R$ 00,00"
                             onChange={({ target }) => setAmount(target.value)} />
                         <S.FormContent>
                             <S.TitleTransaction
                                 type="text"
                                 value={resume}
+                                maxLength={15}
                                 placeholder="Título"
                                 onChange={({ target }) => setResume(target.value)} />
 

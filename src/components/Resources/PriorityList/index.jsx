@@ -40,7 +40,7 @@ export const PriorityList = () => {
                         <S.Input
                             type='text'
                             required
-                            maxLength="23"
+                            maxLength={15}
                             value={resume}
                             placeholder='Digite seu item'
                             onChange={({ target }) => setResume(target.value)} />

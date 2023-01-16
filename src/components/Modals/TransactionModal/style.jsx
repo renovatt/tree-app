@@ -150,7 +150,8 @@ export const Label = styled.label`
         width: 2rem;
         height: 2rem;
         pointer-events: none;
-        color: var(--background-dark-smooth);
+        color: var(--text-default);
+        filter: drop-shadow(2px 1px 5px var(--background-dark));
     }
 `
 

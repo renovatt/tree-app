@@ -127,10 +127,11 @@ export const Span = styled.span`
     left: 0;
     text-align: center;
     width: 100%;
-    font-size: .9rem;
+    font-size: .7rem;
     font-weight: bold;
     pointer-events: none;
-    color: var(--background-dark-smooth);
+    color: var(--text-default);
+    text-shadow: 2px 1px 5px var(--background-dark);
 `
 
 export const ToogleInput = styled.input`
@@ -141,22 +142,26 @@ export const ToogleInput = styled.input`
     transition: .3s;
     position: absolute;
     cursor: pointer;
+    border: 1px solid var(--background-white);
 
     &.min{
         &:checked{
             background: #22c55e;
+            border: none;
         }
     }
     
     &.medium{
         &:checked{
             background: #e89611;
+            border: none;
         }
     }
 
     &.max{
         &:checked{
             background: #ef4444;
+            border: none;
         }
     }
 `
