@@ -1,0 +1,27 @@
+import * as S from './style'
+import { VscTrash } from 'react-icons/vsc';
+import { auth } from '../../../../services/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { deleteMonthlyExpenseDoc } from '../../../../conections/notes';
+import { ItemMonthyExpenseListProps } from '../../../../@types';
+
+export const ItemListMonthlyExpense = ({ id, resume, amount }: ItemMonthyExpenseListProps) => {
+    const [user] = useAuthState(auth);
+    return (
+        <S.Container>
+            <S.Lists key={id}>
+                <S.Resume>{resume}</S.Resume>
+                <S.Items>
+                    {amount ? Number(amount).toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    }) : 'R$ 00,00'}
+                </S.Items>
+                <S.Delete
+                    onClick={() => deleteMonthlyExpenseDoc(user?.uid as string, id)}>
+                    <VscTrash />
+                </S.Delete>
+            </S.Lists>
+        </S.Container>
+    )
+}
