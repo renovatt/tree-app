@@ -1,17 +1,42 @@
 import React from 'react'
 import * as S from './style'
-// import { Plugin } from '../Plugin'
 import { Bar } from 'react-chartjs-2'
-import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../../../../services/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { ChartJSDefault } from '../../../Helper/ChartJSDefault'
 import { handleTransactionObserver } from '../../../../conections/transactions'
+
 import {
     calculateTotals,
     chartConfig,
     createMonthObject
 } from '../../../../conections/chartJS'
-import { ChartJSDefault } from '../../../Helper/ChartJSDefault'
-import { ChartJsStateProps, DataMonthObjectChartJsProps, DataTotalsEachMonthChartJsProps, DataTransactionProps } from '../../../../@types'
+
+import {
+    ChartJsStateProps,
+    DataMonthObjectChartJsProps,
+    DataTotalsEachMonthChartJsProps,
+    DataTransactionProps
+} from '../../../../@types'
+
+import {
+    Chart as ChartJS,
+    BarElement,
+    LinearScale,
+    Tooltip,
+    Legend
+} from 'chart.js/auto'
+
+ChartJS.register(
+    BarElement,
+    LinearScale,
+    Tooltip,
+    Legend
+)
+
+ChartJS.defaults.layout.padding = 16
+ChartJS.defaults.plugins.legend.display = false
+ChartJS.defaults.plugins.title.display = false
 
 export const BarChartX = () => {
 
@@ -20,7 +45,7 @@ export const BarChartX = () => {
     const [monthObject, setMonthObject] = React.useState<DataMonthObjectChartJsProps>([])
     const [totalsByMonth, setTotalsByMonth] = React.useState<DataTotalsEachMonthChartJsProps>([]);
     const [chartData, setChartData] = React.useState<ChartJsStateProps>({
-        labels: ["January", "February", "March", "April", "May", "June"],
+        labels: [],
         datasets: [
             {
                 label: "Faturamentos dos últimos 6 meses",
@@ -32,7 +57,7 @@ export const BarChartX = () => {
                     "#59a14f",
                     "#edc948",
                 ],
-                data: [0, 0, 0, 0, 0, 0],
+                data: [],
                 borderWidth: 1,
                 indexAxis: 'x',
             },

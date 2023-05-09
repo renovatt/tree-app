@@ -32,10 +32,10 @@ export const Dashboard = () => {
           <S.Add onClick={() => setTransactionModal(true)}>+</S.Add>
         </S.CashPreview>
         <S.PreviewGraphBarY>
-          {/* <BarChartY /> */}
+          <BarChartY />
         </S.PreviewGraphBarY>
         <S.PreviewGraphBarX>
-          {/* <BarChartX /> */}
+          <BarChartX />
         </S.PreviewGraphBarX>
       </S.Content>
       <S.HeaderDash>
