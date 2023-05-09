@@ -67,4 +67,14 @@ li {
 a{
     text-decoration: none;
 }
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
 `

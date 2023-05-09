@@ -4,9 +4,16 @@ import { auth } from '../../../../services/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { deleteMonthlyExpenseDoc } from '../../../../conections/notes';
 import { ItemMonthyExpenseListProps } from '../../../../@types';
+import { toast } from 'react-toastify';
 
 export const ItemListMonthlyExpense = ({ id, resume, amount }: ItemMonthyExpenseListProps) => {
     const [user] = useAuthState(auth);
+
+    const handleDeleteExpense = (userUid: string, id: string) => {
+        deleteMonthlyExpenseDoc(userUid, id)
+        toast.success("Item deletado com sucesso!")
+    }
+
     return (
         <S.Container>
             <S.Lists key={id}>
@@ -18,7 +25,7 @@ export const ItemListMonthlyExpense = ({ id, resume, amount }: ItemMonthyExpense
                     }) : 'R$ 00,00'}
                 </S.Items>
                 <S.Delete
-                    onClick={() => deleteMonthlyExpenseDoc(user?.uid as string, id)}>
+                    onClick={() => handleDeleteExpense(user?.uid as string, id)}>
                     <VscTrash />
                 </S.Delete>
             </S.Lists>

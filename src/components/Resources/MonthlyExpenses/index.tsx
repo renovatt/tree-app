@@ -8,19 +8,21 @@ import {
 } from '../../../conections/notes';
 import { ItemListMonthlyExpense } from '../Tables/ItemListMonthlyExpense';
 import { DataMontlyExpensesProps } from '../../../@types';
+import { toast } from 'react-toastify';
 
 export const MonthlyExpenses = () => {
     const [user] = useAuthState(auth);
     const listRef = React.useRef<HTMLDivElement>(null)
     const [resume, setResume] = React.useState('')
-    const [amount, setAmount] = React.useState(0)
+    const [amount, setAmount] = React.useState<number  | string>('')
     const [firebaseMontlyExpensesData, setFirebaseMontlyExpensesData] = React.useState<DataMontlyExpensesProps>([])
 
     async function handleSaveMonthlyExpense(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        await handleSaveMonthlyExpensesList(resume, amount, user?.uid as string)
+        await handleSaveMonthlyExpensesList(resume, +amount, user?.uid as string)
         setResume('')
-        setAmount(0)
+        setAmount('')
+        toast.success("Despesa adicionada com sucesso!")
     }
 
     React.useEffect(() => {
@@ -46,10 +48,10 @@ export const MonthlyExpenses = () => {
                             onChange={({ target }) => setResume(target.value)} />
 
                         <S.InputNumber
-                            type='text'
+                            type='number'
                             value={amount}
                             maxLength={5}
-                            placeholder='Valor'
+                            placeholder='R$00,00'
                             onChange={({ target }) => setAmount(+target.value)} />
                         <S.Add type='submit'>Salvar</S.Add>
                     </S.Form>

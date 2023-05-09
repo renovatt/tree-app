@@ -5,12 +5,14 @@ import { auth } from '../../../services/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { deleteTransactionDoc } from '../../../conections/transactions'
 import { DeleteModalProps } from '../../../@types'
+import { toast } from 'react-toastify';
 
 export const DeleteModal = ({ setDeleteModal, id }: DeleteModalProps) => {
     const [user] = useAuthState(auth);
 
     function handleDeleteTransactionDoc() {
         deleteTransactionDoc(user?.uid as string, id)
+        toast.success("Transação excluída com sucesso!")
         setDeleteModal(false)
     }
 

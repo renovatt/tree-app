@@ -10,6 +10,7 @@ import {
 } from '../../../conections/notes';
 import { ItemListPriority } from '../Tables/ItemListPriority';
 import { DataPriorityListProps } from '../../../@types';
+import { toast } from 'react-toastify';
 
 export const PriorityList = () => {
     const [user] = useAuthState(auth);
@@ -21,6 +22,7 @@ export const PriorityList = () => {
     function handleSaveMonthlyExpense(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         handleSavePriorityList(resume, level, user?.uid as string)
+        toast.success("Item adicionado com sucesso!")
         setResume('')
     }
 
