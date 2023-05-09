@@ -93,8 +93,10 @@ export const UpdateModalTransaction = ({ setUpdateModal, id }: UpdateModalProps)
                             </S.Label>
                         </S.InputsContainer>
                     </S.FormContent>
-                    <S.Add type='submit'>Atualizar</S.Add>
-                    <S.Add onClick={handleDeleteTransactionDoc}>Excluir</S.Add>
+                    <S.ButtonContainer>
+                        <S.Add onClick={handleDeleteTransactionDoc}>Excluir</S.Add>
+                        <S.Add type='submit'>Atualizar</S.Add>
+                    </S.ButtonContainer>
                 </S.Form>
             </S.ModalContent>
         </S.ModalContainer>

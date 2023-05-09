@@ -62,6 +62,13 @@ export const Title = styled.p`
     color: var(--decoration);
 `
 
+export const ButtonContainer = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+`
+
 export const Add = styled.button`
     display: flex;
     align-items: center;
@@ -83,21 +90,6 @@ export const Add = styled.button`
         background: var(--decoration);
     }
 `
-
-////////////////////
-
-// export const ModalContainer = styled.section`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: 888;
-//     width: 100vw;
-//     height: 100vh;
-//     background: rgba(0, 0, 0, .8);
-// `
 
 export const ModalContent = styled.div`
     display: flex;
@@ -262,26 +254,4 @@ export const ToogleInput = styled.input`
         }
     }
 `
-
-// export const Add = styled.button`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 100%;
-//     height: 3rem;
-//     border: none;
-//     margin: .4rem;
-//     outline: none;
-//     transition: .2s;
-//     font-weight: bold;
-//     border-radius: .4rem;
-//     color: var(--decoration);
-//     background: var(--background-white);
-
-//     &:hover{
-//         cursor: pointer;
-//         color: var(--text-default);
-//         background: var(--decoration);
-//     }
-// `
 
