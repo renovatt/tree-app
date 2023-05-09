@@ -1,28 +1,35 @@
 import React from 'react'
 import * as S from './style'
+import { toast } from 'react-toastify';
 import { auth } from '../../../services/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { DataMontlyExpensesProps } from '../../../@types';
+import { ItemListMonthlyExpense } from '../Tables/ItemListMonthlyExpense';
 import {
     handleMonthlyExpensesObserver,
     handleSaveMonthlyExpensesList
 } from '../../../conections/notes';
-import { ItemListMonthlyExpense } from '../Tables/ItemListMonthlyExpense';
-import { DataMontlyExpensesProps } from '../../../@types';
-import { toast } from 'react-toastify';
 
 export const MonthlyExpenses = () => {
     const [user] = useAuthState(auth);
     const listRef = React.useRef<HTMLDivElement>(null)
     const [resume, setResume] = React.useState('')
-    const [amount, setAmount] = React.useState<number  | string>('')
+    const [amount, setAmount] = React.useState<number | string>('')
     const [firebaseMontlyExpensesData, setFirebaseMontlyExpensesData] = React.useState<DataMontlyExpensesProps>([])
 
     async function handleSaveMonthlyExpense(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        await handleSaveMonthlyExpensesList(resume, +amount, user?.uid as string)
-        setResume('')
-        setAmount('')
-        toast.success("Despesa adicionada com sucesso!")
+
+        const { success, message } = await handleSaveMonthlyExpensesList(
+            resume, +amount, user?.uid as string)
+
+        if (!success) {
+            toast.error(message)
+        } else {
+            toast.success(message)
+            setResume('')
+            setAmount('')
+        }
     }
 
     React.useEffect(() => {
@@ -43,15 +50,13 @@ export const MonthlyExpenses = () => {
                         <S.Input
                             type='text'
                             value={resume}
-                            maxLength={15}
-                            placeholder='Digite sua despesa'
+                            placeholder='Alugel'
                             onChange={({ target }) => setResume(target.value)} />
 
                         <S.InputNumber
                             type='number'
                             value={amount}
-                            maxLength={5}
-                            placeholder='R$00,00'
+                            placeholder='R$ 00,00'
                             onChange={({ target }) => setAmount(+target.value)} />
                         <S.Add type='submit'>Salvar</S.Add>
                     </S.Form>

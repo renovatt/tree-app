@@ -2,14 +2,20 @@ import React from 'react'
 import * as S from './style'
 import { sendPasswordReset } from '../../conections/auth';
 import logo from '../../assets/logo.png'
+import { toast } from 'react-toastify';
 
 export const Reset = () => {
     const [email, setEmail] = React.useState('')
 
     async function handleResetPassword(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        await sendPasswordReset(email)
-        setEmail('')
+        const { success, message } = await sendPasswordReset(email)
+        if (!success) {
+            toast.error(message)
+        } else {
+            toast.success(message)
+            setEmail('')
+        }
     }
 
     return (
@@ -25,8 +31,9 @@ export const Reset = () => {
                 <S.Form onSubmit={handleResetPassword}>
                     <S.InputContainer>
                         <S.Input
+                            type='email'
                             value={email}
-                            // required="required"
+                            required
                             onChange={({ target }) => setEmail(target.value)} />
                         <S.Label>E-mail</S.Label>
                         <S.I></S.I>

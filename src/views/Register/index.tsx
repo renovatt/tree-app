@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { registerWithEmailAndPassword } from '../../conections/auth';
 import logo from '../../assets/logo.png'
+import { toast } from 'react-toastify';
 
 export const Register = () => {
     const [name, setName] = React.useState('')
@@ -21,9 +22,14 @@ export const Register = () => {
     const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (!name || !email || !password) {
-            alert("Por favor preencha todos os campos corretamente!");
+            toast.error("Por favor preencha todos os campos corretamente!");
         }
-        await registerWithEmailAndPassword(name, email, password);
+        const { success, message } = await registerWithEmailAndPassword(name, email, password);
+        if (!success) {
+            toast.error(message)
+        } else {
+            toast.success(message)
+        }
     }
 
     return (
@@ -39,8 +45,9 @@ export const Register = () => {
                 <S.Form onSubmit={handleRegister}>
                     <S.InputContainer>
                         <S.Input
+                            type='text'
                             value={name}
-                            // required="required"
+                            required
                             onChange={({ target }) => setName(target.value)} />
                         <S.Label>Nome</S.Label>
                         <S.I></S.I>
@@ -48,8 +55,9 @@ export const Register = () => {
 
                     <S.InputContainer>
                         <S.Input
+                            type='email'
                             value={email}
-                            // required="required"
+                            required
                             onChange={({ target }) => setEmail(target.value)} />
                         <S.Label>E-mail</S.Label>
                         <S.I></S.I>
@@ -59,7 +67,7 @@ export const Register = () => {
                         <S.Input
                             type="password"
                             value={password}
-                            // required="required"
+                            required
                             onChange={({ target }) => setPassword(target.value)} />
                         <S.Label>Senha</S.Label>
                         <S.I></S.I>

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { logInWithEmailAndPassword, signInWithGoogle } from '../../conections/auth';
 import logo from '../../assets/logo.png'
+import { toast } from 'react-toastify';
 
 export const Login = () => {
     const [email, setEmail] = React.useState('')
@@ -20,14 +21,19 @@ export const Login = () => {
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        await logInWithEmailAndPassword(email, password)
+        const { success, message } = await logInWithEmailAndPassword(email, password)
+        if (!success) {
+            toast.error(message)
+        } else {
+            toast.success(message)
+        }
     }
 
     return (
         <S.Container>
             <S.LogoContainer>
                 <S.GrowingPlant>
-                    <S.Logo src={logo} alt='logo-image'/>
+                    <S.Logo src={logo} alt='logo-image' />
                 </S.GrowingPlant>
                 <S.Title>Tree</S.Title>
                 <S.Span>Seu Aplicativo para controle de finanças</S.Span>
@@ -36,8 +42,9 @@ export const Login = () => {
                 <S.Form onSubmit={handleLogin}>
                     <S.InputContainer>
                         <S.Input
+                            type='email'
                             value={email}
-                            // required="required"
+                            required
                             onChange={({ target }) => setEmail(target.value)} />
                         <S.Label>E-mail</S.Label>
                         <S.I></S.I>
@@ -47,7 +54,7 @@ export const Login = () => {
                         <S.Input
                             type="password"
                             value={password}
-                            // required="required"
+                            required
                             onChange={({ target }) => setPassword(target.value)} />
                         <S.Label>Senha</S.Label>
                         <S.I></S.I>

@@ -8,9 +8,9 @@ export type NavbarStyleProps = {
     active: boolean;
 }
 
-export type DeleteModalProps = {
+export type UpdateModalProps = {
     id: string;
-    setDeleteModal: Dispatch<SetStateAction<boolean>>;
+    setUpdateModal: Dispatch<SetStateAction<boolean>>;
 }
 
 export type TransactionModalProps = {
@@ -22,7 +22,6 @@ export type PrivateRouterProps = {
 }
 
 export type TransactionProps = {
-    // userUid?: string;
     id: string;
     resume: string;
     amount: number;
@@ -74,6 +73,13 @@ export type ItemMonthyExpenseListProps = {
 
 export type UserProps = {
     uid: string;
+    email: string | null;
+    name: string | null;
+    authProvider: string;
+}
+
+export type UserDataProps = {
+    uid: string;
     displayName: string | null;
     email: string;
     accessToken: string;
@@ -95,17 +101,6 @@ export type TotalsEachMonthChartJsProps = {
 }
 
 export type DataTotalsEachMonthChartJsProps = TotalsEachMonthChartJsProps[]
-
-// export type ChartJsProps = {
-//     labels: string[];
-//     datasets: {
-//         label: string;
-//         backgroundColor: string[];
-//         indexAxis?: string;
-//         data: number[];
-//         borderWidth: number;
-//     }[]
-// }
 
 export type ChartDataset = {
     label: string;

@@ -1,15 +1,15 @@
 import React from 'react'
 import * as S from './style'
-import { DeleteModal } from '../../../Modals/DeleteModal'
+import { UpdateModalTransaction } from '../../../Modals/UpdateModalTransaction'
 import { ItemTransactionListProps } from '../../../../@types'
 
 export const ItemListTable = ({ id, resume, amount, date, svg, color }: ItemTransactionListProps) => {
-    const [deleteModal, setDeleteModal] = React.useState(false)
+    const [updateModal, setUpdateModal] = React.useState(false)
 
     return (
         <>
-            {deleteModal && <DeleteModal setDeleteModal={setDeleteModal} id={id} />}
-            <S.Container onClick={() => setDeleteModal(true)}>
+            {updateModal && <UpdateModalTransaction setUpdateModal={setUpdateModal} id={id} />}
+            <S.Container onClick={() => setUpdateModal(true)}>
                 <S.ContentLeft>
                     <S.Icon color={color}>{svg as any}</S.Icon>
                     <S.Resume>{resume}</S.Resume>

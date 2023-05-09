@@ -1,3 +1,4 @@
+import { UserProps } from "../../@types";
 import { db } from "../../services/firebase";
 import { auth } from "../../services/firebase";
 import { googleProvider } from "../../services/firebase";
@@ -24,24 +25,19 @@ const signInWithGoogle = async () => {
             name: user.displayName,
             authProvider: "Google",
         }
-        sendingUserDataToFirestore(userRegister)
+        await sendingUserDataToFirestore(userRegister);
+        return { success: true, message: 'Seja bem vindo!' };
     } catch (error: any) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // alert('Google: Error! ', errorCode, errorMessage)
-        alert('Problema ao fazer login!')
-        console.log('Google: ', errorCode, errorMessage)
+        return { success: false, message: 'Problema ao fazer login!' };
     }
 }
 
 const logInWithEmailAndPassword = async (email: string, password: string) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
+        return { success: true, message: 'Seja bem vindo!' };
     } catch (error: any) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('E-mail ou senha inválidos!')
-        console.log('Login: ', errorCode, errorMessage)
+        return { success: false, message: 'E-mail ou senha inválidos!' };
     }
 }
 
@@ -55,35 +51,30 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
             email: email,
             authProvider: "Local",
         }
-        sendingUserDataToFirestore(userRegister)
+        await sendingUserDataToFirestore(userRegister);
+        return { success: true, message: 'Registro realizado com sucesso!' };
     } catch (error: any) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('E-mail ou senha invalidos!')
-        console.log('Register: ', errorCode, errorMessage)
+        return { success: false, message: 'Problema ao realizar o registro, senha precisa ter pelo menos 6 caracteres.' };
     }
 }
 
 const sendPasswordReset = async (email: string) => {
     try {
         await sendPasswordResetEmail(auth, email);
-        alert('E-mail enviado com sucesso, por favor verifique sua caixa de entrada ou spam!')
+        return { success: true, message: 'Verifique o seu e-mail!' };
     } catch (error: any) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('Usuário Não Encontrado!')
-        console.log('Reset Password: ', errorCode, errorMessage)
+        return { success: false, message: 'Usuário não encontrado!' };
     }
 };
 
 const logout = () => {
-    signOut(auth)
+    signOut(auth);
 }
 
-const sendingUserDataToFirestore = async (user: any) => {
+const sendingUserDataToFirestore = async (user: UserProps) => {
     const userCollectionRef = collection(db, 'users')
     const userRef = doc(userCollectionRef, user.uid)
-    await setDoc(userRef, user)
+    await setDoc(userRef, user);
 }
 
 export {

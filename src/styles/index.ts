@@ -31,9 +31,9 @@ export const GlobalStyled = createGlobalStyle`
     border-radius: .4rem;
 }
 
-::selection{
+/* ::selection{
     background: transparent;
-}
+} */
 
 html {
     scroll-behavior: smooth;

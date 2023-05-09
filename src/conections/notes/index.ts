@@ -17,11 +17,25 @@ export const handleSaveMonthlyExpensesList = async (resume: string, amount: numb
     const expensesListCollection = collection(userCollectionRef, UserUid, 'monthlyExpenses')
 
     if (!resume || !amount) {
-        alert("Preencha os campos corretamente!");
-        return;
+        return {
+            success: false,
+            message: "Preencha os campos corretamente!"
+        };
     } else if (amount < 1 || isNaN(amount)) {
-        alert("O valor deve um número ser positivo!");
-        return;
+        return {
+            success: false,
+            message: "O valor tem que ser positivo!"
+        };
+    } else if (amount.toString().length > 5) {
+        return {
+            success: false,
+            message: "O valor não pode ter mais do que 5 caracteres!"
+        }
+    } else if (resume.length > 15) {
+        return {
+            success: false,
+            message: "O título não pode ter mais do que 15 caracteres!"
+        }
     }
 
     const annotation = {
@@ -31,15 +45,33 @@ export const handleSaveMonthlyExpensesList = async (resume: string, amount: numb
         date: Date.now()
     }
 
-    await addDoc(expensesListCollection, annotation)
+    try {
+        await addDoc(expensesListCollection, annotation)
+        return {
+            success: true,
+            message: "Despesa salva com sucesso!"
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            message: "Erro ao salvar a despesa."
+        };
+    }
 }
 
 export const handleSavePriorityList = async (resume: string, level: string, UserUid: string) => {
     const priorityListCollection = collection(userCollectionRef, UserUid, 'priorityList')
 
     if (!resume) {
-        alert("Preencha os campos corretamente!");
-        return;
+        return {
+            success: false,
+            message: "Preencha os campos corretamente!"
+        };
+    } else if (resume.length > 15) {
+        return {
+            success: false,
+            message: "O título não pode ter mais do que 15 caracteres!"
+        }
     }
 
     const annotation = {
@@ -49,7 +81,18 @@ export const handleSavePriorityList = async (resume: string, level: string, User
         date: Date.now()
     }
 
-    await addDoc(priorityListCollection, annotation)
+    try {
+        await addDoc(priorityListCollection, annotation)
+        return {
+            success: true,
+            message: "Item adicionado com sucesso!"
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            message: "Erro ao adicianar."
+        };
+    }
 }
 
 export const handleMonthlyExpensesObserver = (
@@ -61,7 +104,7 @@ export const handleMonthlyExpensesObserver = (
 
     onSnapshot(monthlyExpensesOrderByDate, querySnapshot => {
         const newArray: DataMontlyExpensesProps = []
-        
+
         querySnapshot.forEach(doc => {
             const { resume, amount, date } = doc.data()
             const annotation = {

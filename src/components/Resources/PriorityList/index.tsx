@@ -1,16 +1,16 @@
 import React from 'react'
 import * as S from './style'
+import { toast } from 'react-toastify';
 import { auth } from '../../../services/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { BsShieldFillCheck, BsShieldFillExclamation } from 'react-icons/bs';
 import { RiShieldFlashFill } from 'react-icons/ri';
+import { DataPriorityListProps } from '../../../@types';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { ItemListPriority } from '../Tables/ItemListPriority';
+import { BsShieldFillCheck, BsShieldFillExclamation } from 'react-icons/bs';
 import {
     handlePriorityListObserver,
     handleSavePriorityList
 } from '../../../conections/notes';
-import { ItemListPriority } from '../Tables/ItemListPriority';
-import { DataPriorityListProps } from '../../../@types';
-import { toast } from 'react-toastify';
 
 export const PriorityList = () => {
     const [user] = useAuthState(auth);
@@ -19,11 +19,17 @@ export const PriorityList = () => {
     const [level, setLevel] = React.useState('min')
     const [firebasePriorityListData, setFirebasePriorityListData] = React.useState<DataPriorityListProps>([])
 
-    function handleSaveMonthlyExpense(e: React.FormEvent<HTMLFormElement>) {
+   async function handleSaveMonthlyExpense(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        handleSavePriorityList(resume, level, user?.uid as string)
-        toast.success("Item adicionado com sucesso!")
-        setResume('')
+
+        const { success, message } = await handleSavePriorityList(resume, level, user?.uid as string)
+
+        if (!success) {
+            toast.error(message)
+        } else {
+            toast.success(message)
+            setResume('')
+        }
     }
 
     React.useEffect(() => {
@@ -42,10 +48,8 @@ export const PriorityList = () => {
                     <S.Form onSubmit={handleSaveMonthlyExpense}>
                         <S.Input
                             type='text'
-                            required
-                            maxLength={15}
                             value={resume}
-                            placeholder='Digite seu item'
+                            placeholder='Monitor'
                             onChange={({ target }) => setResume(target.value)} />
 
                         <S.InputsContainer>
