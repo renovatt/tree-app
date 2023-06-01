@@ -43,6 +43,7 @@ export const UpdateModalTransaction = ({ setUpdateModal, id }: UpdateModalProps)
         if (transactionDoc) {
             setResume(transactionDoc.resume)
             setAmount(transactionDoc.amount)
+            setExpense(transactionDoc.expense)
         }
     }
 
@@ -78,7 +79,7 @@ export const UpdateModalTransaction = ({ setUpdateModal, id }: UpdateModalProps)
                                     id='income'
                                     type='radio'
                                     name='type'
-                                    defaultChecked
+                                    checked={!isExpense}
                                     onChange={() => setExpense(!isExpense)} />
                             </S.Label>
 
@@ -89,6 +90,7 @@ export const UpdateModalTransaction = ({ setUpdateModal, id }: UpdateModalProps)
                                     id='expense'
                                     type='radio'
                                     name='type'
+                                    checked={isExpense}
                                     onChange={() => setExpense(!isExpense)} />
                             </S.Label>
                         </S.InputsContainer>

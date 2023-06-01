@@ -26,10 +26,10 @@ export const handleSaveMonthlyExpensesList = async (resume: string, amount: numb
             success: false,
             message: "O valor tem que ser positivo!"
         };
-    } else if (amount.toString().length > 5) {
+    } else if (amount.toString().length > 7) {
         return {
             success: false,
-            message: "O valor não pode ter mais do que 5 caracteres!"
+            message: "O valor não pode ter mais do que 7 caracteres!"
         }
     } else if (resume.length > 15) {
         return {
