@@ -83,6 +83,10 @@ export const Date = styled.span`
     &::first-letter {
             text-transform: uppercase;
         }
+
+    @media (max-width: 29rem) {
+        font-size: .5rem;
+    }
 `
 
 export const Amount = styled.h3`
@@ -91,4 +95,8 @@ color: var(--text-default);
 color: ${(props)=> props.color};
 font-size: 1.5rem;
 width: 10rem;
+
+@media (max-width: 29rem) {
+        font-size: 1rem;
+    }
 `
