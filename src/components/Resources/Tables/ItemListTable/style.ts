@@ -66,9 +66,9 @@ export const Resume = styled.h3`
 
 export const ContentRight = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: 4rem;
     padding-right: .8rem;
 `
