@@ -31,10 +31,10 @@ export const handleSaveMonthlyExpensesList = async (resume: string, amount: numb
             success: false,
             message: "O valor não pode ter mais do que 7 caracteres!"
         }
-    } else if (resume.length > 15) {
+    } else if (resume.length > 21) {
         return {
             success: false,
-            message: "O título não pode ter mais do que 15 caracteres!"
+            message: "O título não pode ter mais do que 21 caracteres!"
         }
     }
 
@@ -67,10 +67,10 @@ export const handleSavePriorityList = async (resume: string, level: string, User
             success: false,
             message: "Preencha os campos corretamente!"
         };
-    } else if (resume.length > 15) {
+    } else if (resume.length > 21) {
         return {
             success: false,
-            message: "O título não pode ter mais do que 15 caracteres!"
+            message: "O título não pode ter mais do que 21 caracteres!"
         }
     }
 
